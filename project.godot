@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="GGJ25_Bubble"
+run/main_scene="res://Assets/Hand/main_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=768
