@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp4vvfx3vaqkd"]
+[gd_scene load_steps=4 format=3 uid="uid://cp4vvfx3vaqkd"]
 
 [ext_resource type="Script" path="res://Assets/start_button.gd" id="1_4gq0s"]
+[ext_resource type="FontFile" uid="uid://6tligljd6e32" path="res://Assets/Fonts/Gaegu-Regular.ttf" id="1_fx00r"]
+[ext_resource type="FontFile" uid="uid://cnhxbqekfv5kv" path="res://Assets/Fonts/Gaegu-Bold.ttf" id="2_1m0hm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -27,12 +29,15 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_fx00r")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]The amazing and incredible tale of polyethylene"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1m0hm")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[center]BUBBLE WRAP:"
@@ -41,18 +46,22 @@ fit_content = true
 [node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("1_fx00r")
+theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
 text = "[center]The Final Pop"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_fx00r")
+theme_override_font_sizes/normal_font_size = 27
 bbcode_enabled = true
 text = "[center] venture forth and..."
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1m0hm")
 theme_override_font_sizes/font_size = 60
 text = "POP"
 script = ExtResource("1_4gq0s")
