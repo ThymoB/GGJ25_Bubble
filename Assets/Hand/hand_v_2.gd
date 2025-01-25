@@ -27,11 +27,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:	
 	
 	if Input.is_action_just_pressed("click"):
-		#detect_collision_at_point(global_position)
-		#pass
 		var overlapping_areas = $HandCollision_Area2D.get_overlapping_areas()
 		for area in overlapping_areas:
-			print("Overlapping with:", area.name)
+			#print("Overlapping with:", area.name)
 			var overlap_bubble = area.get_parent()
 			if overlap_bubble as Bubble:
 				overlap_bubble.pop()
