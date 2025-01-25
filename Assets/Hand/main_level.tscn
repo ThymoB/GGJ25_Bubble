@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=5 format=3 uid="uid://cxkvsimh2pqg3"]
+
+[ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_d2w0x"]
+[ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
+[ext_resource type="Script" path="res://Assets/Hand/hand.gd" id="3_pd0t8"]
+[ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
 
 [node name="MainLevel" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 576.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="UI"]
+self_modulate = Color(0.43638, 0.665103, 0.672477, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ic0rq")
+expand_mode = 3
+
+[node name="BubbleManager" type="Node" parent="."]
+script = ExtResource("4_ayyo3")
+
+[node name="Center" type="Node2D" parent="BubbleManager"]
+position = Vector2(288, 399)
+
+[node name="Hand2D" type="Node2D" parent="."]
+position = Vector2(313, 457)
+script = ExtResource("3_pd0t8")
+
+[node name="Sprite" type="Sprite2D" parent="Hand2D"]
+position = Vector2(14, 33)
+rotation = -1.91986
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_d2w0x")
