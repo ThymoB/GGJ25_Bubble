@@ -51,3 +51,4 @@ volume_db = -30.0
 autoplay = true
 
 [node name="HandV2" parent="." instance=ExtResource("4_t0dxe")]
+position = Vector2(200, 300)
