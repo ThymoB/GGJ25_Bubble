@@ -4,9 +4,11 @@ var target_delta =  Vector2.ZERO
 var weight = 0.0
 var length_factor = 0.0
 var lerped_hand_speed
+@onready var animation_player: AnimationPlayer = $Scaler/Hand_Sprite2D/AnimationPlayer
 
 @export var hand_speed = 350.0
 #unc interpolateVector()
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +28,13 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:	
 	
+	#press down
 	if Input.is_action_just_pressed("click"):
+		#reset anim if already playing
+		if animation_player.is_playing():
+			animation_player.stop()
+		animation_player.play("Scale_Hand")
+		#detect bubbles underneath finger and pop
 		var overlapping_areas = $HandCollision_Area2D.get_overlapping_areas()
 		for area in overlapping_areas:
 			#print("Overlapping with:", area.name)
