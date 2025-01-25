@@ -22,14 +22,15 @@ texture = ExtResource("1_d2w0x")
 [node name="BubbleManager" type="Node" parent="."]
 script = ExtResource("4_ayyo3")
 
-[node name="Center" type="Node2D" parent="BubbleManager"]
-position = Vector2(300, 399)
-
-[node name="SpriteWrap" type="Sprite2D" parent="BubbleManager/Center"]
+[node name="SpriteWrap" type="Sprite2D" parent="BubbleManager"]
 self_modulate = Color(0.581033, 0.581033, 0.581033, 1)
-position = Vector2(-20, 296)
-scale = Vector2(0.52, 0.98)
+position = Vector2(289, 514)
+scale = Vector2(0.566277, 1.32597)
 texture = ExtResource("4_sy54g")
+
+[node name="corner" type="Node2D" parent="BubbleManager/SpriteWrap"]
+position = Vector2(-360, -320)
+scale = Vector2(1.76592, 0.754163)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -50,6 +51,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = 4.10242
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

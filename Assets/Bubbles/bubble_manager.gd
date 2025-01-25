@@ -8,7 +8,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 @export var bubble_spacing:=75
 @export var row_size:=6
 
-@onready var center: Node2D = $Center
+@onready var corner: Node2D = $SpriteWrap/corner
 
 var bubbles:Array[Bubble]
 var bubbles_popped:=0
@@ -31,17 +31,25 @@ func _process(delta: float) -> void:
 	seconds_since_pop += delta
 
 func spawn_bubbles():
-	var top_left_pos = center.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
+	var top_left_pos = corner.global_position
 	for i in range(bubbles_to_spawn):
-		var new_bubble = BUBBLE_SCENE.instantiate()
-		center.add_child(new_bubble)
-		var pos:Vector2
-		pos.x = top_left_pos.x + (i % row_size) * bubble_spacing
-		pos.y = center.global_position.y + floori(i / float(row_size)) * bubble_spacing
+		var index_x = i % row_size
 		@warning_ignore("integer_division")
-		pos.x += (i / row_size) % 2 * bubble_spacing / 2.0
-		new_bubble.global_position = pos
+		var index_y = i / row_size
+		
+		var new_bubble = BUBBLE_SCENE.instantiate()
+		new_bubble.index_x = index_x
+		new_bubble.index_y = index_y
 		new_bubble.bubble_manager = self
+		
+		corner.add_child(new_bubble)
+		
+		var pos:Vector2
+		pos.x = top_left_pos.x + index_x * bubble_spacing
+		pos.y = corner.global_position.y + index_y * bubble_spacing
+		pos.x += index_y % 2 * bubble_spacing / 2.0
+		new_bubble.global_position = pos
+
 		bubbles.append(new_bubble)
 
 # Do cool stuff here
