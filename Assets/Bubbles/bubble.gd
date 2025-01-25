@@ -2,9 +2,6 @@ extends Node2D
 
 class_name Bubble
 
-@export var index_x: int
-@export var index_y: int
-
 @export var UNPOPPED_IMG:Texture2D = preload("res://Assets/Bubbles/unpopped_bubble_1.png")
 @export var POPPED_IMG:Texture2D = preload("res://Assets/Bubbles/popped_bubble_1.png")
 
