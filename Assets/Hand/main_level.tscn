@@ -34,7 +34,7 @@ expand_mode = 3
 script = ExtResource("4_ayyo3")
 
 [node name="Center" type="Node2D" parent="BubbleManager"]
-position = Vector2(288, 399)
+position = Vector2(300, 399)
 
 [node name="Hand2D" type="Node2D" parent="."]
 position = Vector2(313, 457)

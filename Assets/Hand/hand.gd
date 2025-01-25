@@ -6,8 +6,3 @@ func _process(delta: float) -> void:
 
 func input_click():
 	global_position = get_viewport().get_mouse_position()
-	click()
-
-func click():
-	print("click")
-	pass
