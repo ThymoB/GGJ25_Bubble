@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://gprije73fbdf"]
+
+[ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_aeltp"]
+[ext_resource type="Texture2D" uid="uid://dfqvctrerrnxh" path="res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.png" id="2_64oec"]
+[ext_resource type="Texture2D" uid="uid://cagud3niiwen5" path="res://Assets/Effects/SmokeParticle.png" id="2_ii54v"]
+[ext_resource type="AudioStream" uid="uid://nqxi85pik7wo" path="res://Assets/Bubbles/BubbleVariations/Bomb/bomb-sound.wav" id="2_x7x2o"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_10ls1"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Bubble" instance=ExtResource("1_aeltp")]
+pop_sounds = Array[AudioStream]([ExtResource("2_x7x2o")])
+
+[node name="EffectParticle" parent="." index="0"]
+material = SubResource("CanvasItemMaterial_10ls1")
+lifetime = 1.5
+lifetime_randomness = 1.0
+texture = ExtResource("2_ii54v")
+gravity = Vector2(0, 50)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+color = Color(0.996983, 0.785091, 0.757655, 1)
+hue_variation_min = -0.2
+hue_variation_max = 0.44
+anim_speed_min = 2.0
+anim_speed_max = 5.0
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_64oec")
