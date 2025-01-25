@@ -42,6 +42,8 @@ func spawn_bubbles():
 		pos.x += (i / row_size) % 2 * bubble_spacing / 2.0
 		new_bubble.global_position = pos
 		new_bubble.bubble_manager = self
+		var animation_list : Array = new_bubble.get_animation_list()
+		new_bubble.selected_animation = animation_list.pick_random()
 		bubbles.append(new_bubble)
 
 # Do cool stuff here
