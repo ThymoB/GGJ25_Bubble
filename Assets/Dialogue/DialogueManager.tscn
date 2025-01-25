@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxvkti2k6bdcj"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue_manager.gd" id="1_o4klo"]
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_6v80s"]
+[ext_resource type="Resource" uid="uid://dqei4vtjgw0n3" path="res://dialogue/blurbs/blurb_01.tres" id="3_r0jb2"]
+[ext_resource type="Resource" uid="uid://bkfnjcq1lxvkv" path="res://dialogue/blurbs/blurb_02.tres" id="4_2dpdu"]
+
+[node name="DialogueManager" type="Node"]
+script = ExtResource("1_o4klo")
+blurbs = Array[ExtResource("2_6v80s")]([ExtResource("3_r0jb2"), ExtResource("4_2dpdu")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BlurbTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true

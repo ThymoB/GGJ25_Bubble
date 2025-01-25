@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bkfnjcq1lxvkv"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_behfa"]
+
+[resource]
+script = ExtResource("1_behfa")
+character = "Bubbles"
+line = "I am also a random blurb"

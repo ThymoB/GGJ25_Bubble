@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1unm70okpuk4"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/speech_bubble.gd" id="1_p4ei3"]
+[ext_resource type="Texture2D" uid="uid://c4gdf5suchptn" path="res://Assets/Dialogue/beautiful_bubble.png" id="2_ru507"]
+[ext_resource type="FontFile" uid="uid://c4phojbf4gxvj" path="res://Assets/Fonts/Gaegu-Light.ttf" id="3_1p18r"]
+[ext_resource type="FontFile" uid="uid://cnhxbqekfv5kv" path="res://Assets/Fonts/Gaegu-Bold.ttf" id="4_fw2tp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kovq"]
+size = Vector2(271.5, 127.5)
+
+[node name="SpeechBubble" type="Node2D"]
+script = ExtResource("1_p4ei3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ru507")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = -123.0
+offset_top = -83.0
+offset_right = 161.0
+offset_bottom = -30.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_fw2tp")
+theme_override_font_sizes/normal_font_size = 24
+text = "Bubbler"
+
+[node name="Body" type="RichTextLabel" parent="."]
+offset_left = -122.0
+offset_top = -51.0
+offset_right = 131.0
+offset_bottom = 41.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_1p18r")
+theme_override_font_sizes/normal_font_size = 24
+text = "This is a dialogue. This is what I'm saying about you."
+scroll_active = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.75, -20.75)
+shape = SubResource("RectangleShape2D_0kovq")
+
+[node name="Lifetime" type="Timer" parent="."]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -18,6 +18,7 @@ config/icon="res://Assets/Bubbles/bubble_temp.png"
 [autoload]
 
 HandSkinManager="*res://Assets/Hand/HandSkinManager.tscn"
+DialogueManager="*res://Assets/Dialogue/DialogueManager.tscn"
 
 [display]
 

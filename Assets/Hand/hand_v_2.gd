@@ -40,6 +40,8 @@ func _physics_process(delta: float) -> void:
 			var overlap_bubble = area.get_parent()
 			if overlap_bubble as Bubble:
 				overlap_bubble.pop()
+			if overlap_bubble as SpeechBubble:
+				overlap_bubble.close_dialogue()
 		
 
 

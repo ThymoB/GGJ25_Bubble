@@ -49,13 +49,13 @@ func spawn_bubbles():
 func on_bubble_popped(bubble:Bubble):
 	add_heat()
 	seconds_since_pop = 0.0 
-	pass
+	try_trigger_dialogue()
 	
 func add_heat():
 	heat = minf(HEAT_MAX, heat + HEAT_PER_POP)
-	pass
 	
 func decay_heat(dt: float):
 	heat = maxf(0.0, heat - HEAT_DECAY_PER_SEC * dt)
-	pass
-	
+
+func try_trigger_dialogue():
+	DialogueManager.try_play_blurb()
