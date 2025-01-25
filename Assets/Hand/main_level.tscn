@@ -16,7 +16,6 @@ position = Vector2(300, 399)
 
 [node name="SpriteWrap" type="Sprite2D" parent="BubbleManager/Center"]
 self_modulate = Color(0.913822, 0.952077, 1, 1)
-position = Vector2(-16, 129.5)
 position = Vector2(-16, 368)
 scale = Vector2(0.562963, 0.564062)
 texture = ExtResource("2_xbt6e")
