@@ -26,9 +26,3 @@ func spawn_bubbles():
 		pos.x += (i / row_size) % 2 * bubble_spacing / 2
 		new_bubble.global_position = pos
 		new_bubble.bubble_manager = self
-
-func pop_bubble(bubble:Bubble):
-	bubble.queue_free()
-	bubbles_popped += 1
-	print("Bubbles popped: " + str(bubbles_popped))
-	

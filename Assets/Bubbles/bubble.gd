@@ -13,4 +13,9 @@ func _process(_delta: float) -> void:
 	if is_instance_valid(sprite):
 		if sprite.get_rect().has_point(get_global_mouse_position()):
 			if Input.is_action_pressed("click"):
-				bubble_manager.pop_bubble(self)
+				pop()
+
+func pop():
+	bubble_manager.bubbles_popped += 1
+	print("Bubbles popped: " + str(bubble_manager.bubbles_popped))
+	queue_free()
