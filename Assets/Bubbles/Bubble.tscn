@@ -11,6 +11,7 @@
 radius = 8.0
 
 [node name="Bubble" type="Node2D"]
+self_modulate = Color(0.913725, 0.952941, 1, 1)
 script = ExtResource("1_0nqcw")
 pop_sounds = Array[AudioStream]([ExtResource("2_iqf1g"), ExtResource("3_6koot"), ExtResource("4_71d3r"), ExtResource("5_71yqk")])
 

@@ -15,6 +15,7 @@ script = ExtResource("4_ayyo3")
 position = Vector2(300, 399)
 
 [node name="SpriteWrap" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.913822, 0.952077, 1, 1)
 position = Vector2(-16, 129.5)
 scale = Vector2(0.562963, 0.564062)
 texture = ExtResource("2_xbt6e")
@@ -33,7 +34,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Background" type="TextureRect" parent="UI"]
-self_modulate = Color(0.474523, 0.460932, 0.437059, 1)
+self_modulate = Color(0.623529, 0.792157, 1, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
