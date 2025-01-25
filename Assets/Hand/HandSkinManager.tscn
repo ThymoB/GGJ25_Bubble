@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brm5oby8hthbe"]
+
+[ext_resource type="Script" path="res://Assets/Hand/hand_skin_manager.gd" id="1_58k0m"]
+
+[node name="HandSkinManager" type="Node"]
+script = ExtResource("1_58k0m")

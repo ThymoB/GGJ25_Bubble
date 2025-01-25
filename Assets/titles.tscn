@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp4vvfx3vaqkd"]
+[gd_scene load_steps=9 format=3 uid="uid://cp4vvfx3vaqkd"]
 
 [ext_resource type="Script" path="res://Assets/start_button.gd" id="1_4gq0s"]
 [ext_resource type="FontFile" uid="uid://6tligljd6e32" path="res://Assets/Fonts/Gaegu-Regular.ttf" id="1_fx00r"]
 [ext_resource type="FontFile" uid="uid://cnhxbqekfv5kv" path="res://Assets/Fonts/Gaegu-Bold.ttf" id="2_1m0hm"]
+[ext_resource type="Texture2D" uid="uid://con418e6k6vv5" path="res://Assets/Hand/arm-2.png" id="3_wpjgw"]
+[ext_resource type="Script" path="res://Assets/arm_select_button.gd" id="4_rh4ps"]
+[ext_resource type="Texture2D" uid="uid://ccpdje1npfkl7" path="res://Assets/Hand/arm-1.png" id="5_af012"]
+[ext_resource type="Texture2D" uid="uid://c808a2xp2ytfu" path="res://Assets/Hand/arm-3.png" id="6_8m8is"]
+[ext_resource type="Texture2D" uid="uid://cd4q3xi04y54x" path="res://Assets/Hand/arm-4.png" id="7_88mpe"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,15 +49,80 @@ text = "[center]BUBBLE WRAP:"
 fit_content = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_fx00r")
 theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
 text = "[center]The Final Pop"
 
+[node name="RichTextLabel_ChooseArm2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_fx00r")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[center]Choose your skin"
+
+[node name="RichTextLabel_ChooseArm" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_fx00r")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm"]
+layout_mode = 0
+offset_right = 466.0
+offset_bottom = 111.0
+
+[node name="Button_Arm1" type="Button" parent="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1m0hm")
+theme_override_font_sizes/font_size = 60
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("3_wpjgw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_rh4ps")
+
+[node name="Button_Arm2" type="Button" parent="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1m0hm")
+theme_override_font_sizes/font_size = 60
+toggle_mode = true
+icon = ExtResource("5_af012")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_rh4ps")
+
+[node name="Button_Arm3" type="Button" parent="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1m0hm")
+theme_override_font_sizes/font_size = 60
+toggle_mode = true
+icon = ExtResource("6_8m8is")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_rh4ps")
+
+[node name="Button_Arm4" type="Button" parent="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1m0hm")
+theme_override_font_sizes/font_size = 60
+toggle_mode = true
+icon = ExtResource("7_88mpe")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_rh4ps")
+
 [node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 41.33)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_fx00r")
 theme_override_font_sizes/normal_font_size = 27
@@ -66,4 +136,8 @@ theme_override_font_sizes/font_size = 60
 text = "POP"
 script = ExtResource("1_4gq0s")
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm1" to="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm1" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm2" to="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm2" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm3" to="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm3" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm4" to="MarginContainer/VBoxContainer/RichTextLabel_ChooseArm/HBoxContainer/Button_Arm4" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="MarginContainer/VBoxContainer/Button" method="_on_pressed"]

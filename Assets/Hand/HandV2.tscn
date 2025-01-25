@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://wfry68h7pjcx"]
+[gd_scene load_steps=8 format=3 uid="uid://wfry68h7pjcx"]
 
 [ext_resource type="Script" path="res://Assets/Hand/hand_v_2.gd" id="1_r43cx"]
 [ext_resource type="Texture2D" uid="uid://con418e6k6vv5" path="res://Assets/Hand/arm-2.png" id="2_ddm8v"]
+[ext_resource type="Script" path="res://Assets/Hand/Arm_skin_select_sprite.gd" id="3_qkmde"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_85quj"]
 radius = 5.0
@@ -59,6 +60,7 @@ position = Vector2(133, 182)
 rotation = -0.507891
 scale = Vector2(0.485, 0.485)
 texture = ExtResource("2_ddm8v")
+script = ExtResource("3_qkmde")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scaler/Hand_Sprite2D"]
 libraries = {

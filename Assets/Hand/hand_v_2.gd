@@ -27,7 +27,6 @@ func _process(delta: float) -> void:
 	global_position = global_position + target_delta.normalized() * lerped_hand_speed * delta
 	
 func _physics_process(delta: float) -> void:	
-	
 	#press down
 	if Input.is_action_just_pressed("click"):
 		#reset anim if already playing
