@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6rf6xlbvvur"
-path="res://.godot/imported/base_start.png-be6c1043fdb821bf446d06148d963aaa.ctex"
+uid="uid://c808a2xp2ytfu"
+path="res://.godot/imported/arm-3.png-6378629017b522960aec678c6dd6914f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/base_start.png"
-dest_files=["res://.godot/imported/base_start.png-be6c1043fdb821bf446d06148d963aaa.ctex"]
+source_file="res://Assets/Hand/arm-3.png"
+dest_files=["res://.godot/imported/arm-3.png-6378629017b522960aec678c6dd6914f.ctex"]
 
 [params]
 

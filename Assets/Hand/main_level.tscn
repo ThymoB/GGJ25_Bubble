@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=7 format=3 uid="uid://cxkvsimh2pqg3"]
 
+[ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_d2w0x"]
 [ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
+[ext_resource type="Script" path="res://Assets/Hand/hand.gd" id="3_pd0t8"]
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
 [ext_resource type="Texture2D" uid="uid://64rtbibm8agb" path="res://Assets/Background/Sky_Blue.png" id="4_sy54g"]
-[ext_resource type="PackedScene" uid="uid://wfry68h7pjcx" path="res://Assets/Hand/HandV2.tscn" id="4_t0dxe"]
+[ext_resource type="AudioStream" uid="uid://bsd78tqumaoxr" path="res://Assets/Audio/ggj25_01_ambient.mp3" id="6_o6ssd"]
 
 [node name="MainLevel" type="Node2D"]
+
+[node name="Hand2D" type="Node2D" parent="."]
+visible = false
+position = Vector2(313, 457)
+script = ExtResource("3_pd0t8")
+
+[node name="Sprite" type="Sprite2D" parent="Hand2D"]
+position = Vector2(14, 33)
+rotation = -1.91986
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_d2w0x")
 
 [node name="BubbleManager" type="Node" parent="."]
 script = ExtResource("4_ayyo3")
@@ -44,4 +57,7 @@ mouse_filter = 2
 texture = ExtResource("1_ic0rq")
 expand_mode = 3
 
-[node name="HandV2" parent="." instance=ExtResource("4_t0dxe")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o6ssd")
+volume_db = -30.0
+autoplay = true
