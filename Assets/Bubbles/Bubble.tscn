@@ -15,7 +15,6 @@ script = ExtResource("1_0nqcw")
 pop_sounds = Array[AudioStream]([ExtResource("2_iqf1g"), ExtResource("3_6koot"), ExtResource("4_71d3r"), ExtResource("5_71yqk")])
 
 [node name="Sprite" type="Sprite2D" parent="."]
-self_modulate = Color(0.430322, 0.428549, 0.668171, 1)
 scale = Vector2(0.442105, 0.442105)
 texture = ExtResource("2_dh2g4")
 
