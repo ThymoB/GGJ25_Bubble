@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3awqci0xq0qv" path="res://Assets/Bubbles/bubble_temp.png" id="1_l2tlr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ykr8"]
+radius = 8.0
 
 [node name="Bubble" type="Node2D"]
 script = ExtResource("1_0nqcw")

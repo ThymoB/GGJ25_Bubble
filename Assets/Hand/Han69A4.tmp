@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfry68h7pjcx"]
+
+[ext_resource type="Script" path="res://Assets/Hand/hand_v_2.gd" id="1_r43cx"]
+[ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_s5br7"]
+
+[node name="HandV2" type="Node2D"]
+script = ExtResource("1_r43cx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-110, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_s5br7")
