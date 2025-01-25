@@ -7,6 +7,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 @export var bubbles_to_spawn:=100
 @export var bubble_spacing:=75
 @export var row_size:=6
+@export var scroll_speed = 10
 
 @onready var center: Node2D = $Center
 
@@ -29,6 +30,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	decay_heat(delta)
 	seconds_since_pop += delta
+	#move bubbles and wrap
+	center.position += Vector2(0,delta*-scroll_speed)
 
 func spawn_bubbles():
 	var top_left_pos = center.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
