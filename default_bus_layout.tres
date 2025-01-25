@@ -3,7 +3,7 @@
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_drjo2"]
 resource_name = "Reverb"
 hipass = 0.5
-wet = 0.1
+wet = 0.05
 
 [resource]
 bus/1/name = &"SFX"
