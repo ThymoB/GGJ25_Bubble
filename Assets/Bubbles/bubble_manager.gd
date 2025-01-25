@@ -10,6 +10,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @onready var center: Node2D = $Center
 
+var bubbles:Array[Bubble]
 var bubbles_popped:=0
 
 func _ready() -> void:
@@ -26,3 +27,9 @@ func spawn_bubbles():
 		pos.x += (i / row_size) % 2 * bubble_spacing / 2
 		new_bubble.global_position = pos
 		new_bubble.bubble_manager = self
+		bubbles.append(new_bubble)
+
+# Do cool stuff here
+# You can check bubbles_popped to see how many bubbles have been popped
+func on_bubble_popped(bubble:Bubble):
+	pass
