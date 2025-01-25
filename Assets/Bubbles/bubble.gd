@@ -7,6 +7,7 @@ class_name Bubble
 
 var bubble_manager:BubbleManager
 
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sprite: Sprite2D = $Sprite
 
 func _ready() -> void:
@@ -25,4 +26,6 @@ func pop():
 	bubble_manager.bubbles_popped += 1
 	print("Bubbles popped: " + str(bubble_manager.bubbles_popped))
 	sprite.texture = POPPED_IMG
+	audio_stream_player.pitch_scale = randf_range(0.75,1.5)
+	audio_stream_player.play()
 	bubble_manager.on_bubble_popped(self)

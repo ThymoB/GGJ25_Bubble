@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=7 format=3 uid="uid://cxkvsimh2pqg3"]
 
 [ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_d2w0x"]
 [ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
 [ext_resource type="Script" path="res://Assets/Hand/hand.gd" id="3_pd0t8"]
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
 [ext_resource type="Texture2D" uid="uid://64rtbibm8agb" path="res://Assets/Background/Sky_Blue.png" id="4_sy54g"]
+[ext_resource type="AudioStream" uid="uid://bsd78tqumaoxr" path="res://Assets/Audio/ggj25_01_ambient.mp3" id="6_o6ssd"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -55,3 +56,8 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_ic0rq")
 expand_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o6ssd")
+volume_db = -30.0
+autoplay = true
