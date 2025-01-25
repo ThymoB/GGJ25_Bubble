@@ -1,24 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://wfry68h7pjcx"]
+[gd_scene load_steps=7 format=3 uid="uid://wfry68h7pjcx"]
 
 [ext_resource type="Script" path="res://Assets/Hand/hand_v_2.gd" id="1_r43cx"]
-[ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_s5br7"]
+[ext_resource type="Texture2D" uid="uid://con418e6k6vv5" path="res://Assets/Hand/arm-2.png" id="2_ddm8v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_85quj"]
 radius = 5.0
 
+[sub_resource type="Animation" id="Animation_k6vpp"]
+resource_name = "Scale_Hand"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.825, 0.825), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mhg4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_li0ml"]
+_data = {
+"RESET": SubResource("Animation_mhg4m"),
+"Scale_Hand": SubResource("Animation_k6vpp")
+}
+
 [node name="HandV2" type="Node2D"]
 script = ExtResource("1_r43cx")
-
-[node name="Hand_Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-110, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_s5br7")
 
 [node name="HandCollision_Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandCollision_Area2D"]
 shape = SubResource("CircleShape2D_85quj")
+
+[node name="Scaler" type="Node2D" parent="."]
+
+[node name="Hand_Sprite2D" type="Sprite2D" parent="Scaler"]
+z_index = 2
+position = Vector2(133, 182)
+rotation = -0.507891
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("2_ddm8v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scaler/Hand_Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_li0ml")
+}
 
 [connection signal="area_entered" from="HandCollision_Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_shape_entered" from="HandCollision_Area2D" to="." method="_on_area_2d_area_shape_entered"]
