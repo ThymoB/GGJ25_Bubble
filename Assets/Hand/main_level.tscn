@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=7 format=3 uid="uid://cxkvsimh2pqg3"]
 
 [ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
 [ext_resource type="Texture2D" uid="uid://bx6rf6xlbvvur" path="res://Assets/Background/base_start.png" id="2_xbt6e"]
+[ext_resource type="Texture2D" uid="uid://dgx4a76c0ht5c" path="res://Assets/Background/base_endless.png" id="3_3hxnc"]
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
 [ext_resource type="PackedScene" uid="uid://wfry68h7pjcx" path="res://Assets/Hand/HandV2.tscn" id="4_t0dxe"]
 [ext_resource type="AudioStream" uid="uid://bsd78tqumaoxr" path="res://Assets/Audio/ggj25_01_ambient.mp3" id="6_o6ssd"]
@@ -14,11 +15,17 @@ script = ExtResource("4_ayyo3")
 [node name="Center" type="Node2D" parent="BubbleManager"]
 position = Vector2(300, 399)
 
-[node name="SpriteWrap" type="Sprite2D" parent="BubbleManager/Center"]
+[node name="SpriteWrapStart" type="Sprite2D" parent="BubbleManager/Center"]
 self_modulate = Color(0.913822, 0.952077, 1, 1)
 position = Vector2(-16, 368)
 scale = Vector2(0.562963, 0.564062)
 texture = ExtResource("2_xbt6e")
+
+[node name="SpriteWrapEndless" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.913725, 0.952941, 1, 1)
+position = Vector2(-16, 2223)
+scale = Vector2(0.561111, 0.712388)
+texture = ExtResource("3_3hxnc")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

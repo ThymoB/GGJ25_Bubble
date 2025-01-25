@@ -1,19 +1,20 @@
 extends Node2D
-var mouse_position = Vector2.ZERO
-var target_delta =  Vector2.ZERO
-var weight = 0.0
-var length_factor = 0.0
-var lerped_hand_speed
 @onready var animation_player: AnimationPlayer = $Scaler/Hand_Sprite2D/AnimationPlayer
 
 @export var hand_speed = 350.0
-#unc interpolateVector()
+
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+var mouse_position = Vector2.ZERO
+var target_delta =  Vector2.ZERO
+var weight = 0.0
+var length_factor = 0.0
+var lerped_hand_speed = 0.0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
