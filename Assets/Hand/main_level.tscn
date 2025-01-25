@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=6 format=3 uid="uid://cxkvsimh2pqg3"]
 
 [ext_resource type="Texture2D" uid="uid://dmf1sd6lm1a5b" path="res://Assets/Hand/Hand_PlaceHolderVisual.png" id="1_d2w0x"]
 [ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
 [ext_resource type="Script" path="res://Assets/Hand/hand.gd" id="3_pd0t8"]
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
+[ext_resource type="Texture2D" uid="uid://64rtbibm8agb" path="res://Assets/Background/Sky_Blue.png" id="4_sy54g"]
 
 [node name="MainLevel" type="Node2D"]
 
 [node name="Hand2D" type="Node2D" parent="."]
+visible = false
 position = Vector2(313, 457)
 script = ExtResource("3_pd0t8")
 
@@ -23,6 +25,12 @@ script = ExtResource("4_ayyo3")
 [node name="Center" type="Node2D" parent="BubbleManager"]
 position = Vector2(300, 399)
 
+[node name="SpriteWrap" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.581033, 0.581033, 0.581033, 1)
+position = Vector2(-20, 296)
+scale = Vector2(0.52, 0.98)
+texture = ExtResource("4_sy54g")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -34,9 +42,10 @@ offset_right = 576.0
 offset_bottom = 1024.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Background" type="TextureRect" parent="UI"]
-self_modulate = Color(0.43638, 0.665103, 0.672477, 1)
+self_modulate = Color(0.474523, 0.460932, 0.437059, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
