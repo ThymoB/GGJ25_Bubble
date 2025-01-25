@@ -2,8 +2,8 @@ extends Node2D
 
 class_name Bubble
 
-@export var UNPOPPED_IMG:Texture2D = preload("res://Assets/Bubbles/bubble_temp.png")
-@export var POPPED_IMG:Texture2D = null
+@export var UNPOPPED_IMG:Texture2D = preload("res://Assets/Bubbles/unpopped_bubble_1.png")
+@export var POPPED_IMG:Texture2D = preload("res://Assets/Bubbles/popped_bubble_1.png")
 
 var bubble_manager:BubbleManager
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbgff0jwnlu8k"]
 
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble.gd" id="1_0nqcw"]
-[ext_resource type="Texture2D" uid="uid://b3awqci0xq0qv" path="res://Assets/Bubbles/bubble_temp.png" id="1_l2tlr"]
+[ext_resource type="Texture2D" uid="uid://gv3h10wklm8x" path="res://Assets/Bubbles/unpopped_bubble_1.png" id="2_dh2g4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ykr8"]
 
@@ -10,8 +10,8 @@ script = ExtResource("1_0nqcw")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 self_modulate = Color(0.430322, 0.428549, 0.668171, 1)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("1_l2tlr")
+scale = Vector2(0.442105, 0.442105)
+texture = ExtResource("2_dh2g4")
 
 [node name="Area2D" type="Area2D" parent="."]
 
