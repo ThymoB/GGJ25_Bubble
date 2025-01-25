@@ -1,10 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://d0t5wy4f6rk0l"]
+[gd_scene load_steps=33 format=3 uid="uid://dvdfs575p4xog"]
 
 [ext_resource type="Texture2D" uid="uid://cihd3ndimk5k7" path="res://Assets/Effects/BubbleParticle.png" id="1_meyk6"]
 [ext_resource type="Texture2D" uid="uid://cjufuy0icssb" path="res://Assets/Effects/CircleParticle.png" id="2_7pnxs"]
 [ext_resource type="Texture2D" uid="uid://cagud3niiwen5" path="res://Assets/Effects/SmokeParticle.png" id="3_5gsdg"]
 [ext_resource type="Texture2D" uid="uid://dwmd3qr0h13n6" path="res://Assets/Effects/SparkleParticle.png" id="4_a3s7q"]
-[ext_resource type="Script" path="res://Assets/Effects/animated_sprite_2d.gd" id="5_pjmt2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwcpn"]
 atlas = ExtResource("1_meyk6")
@@ -211,10 +210,23 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_6asw6"]
+script/source = "extends AnimatedSprite2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(317, 389)
 sprite_frames = SubResource("SpriteFrames_cmjtm")
-animation = &"smoke"
-script = ExtResource("5_pjmt2")
+animation = &"sparkle"
+script = SubResource("GDScript_6asw6")

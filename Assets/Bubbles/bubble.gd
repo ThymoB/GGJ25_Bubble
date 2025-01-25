@@ -5,16 +5,9 @@ class_name Bubble
 @export var UNPOPPED_IMG:Texture2D = preload("res://Assets/Bubbles/unpopped_bubble_1.png")
 @export var POPPED_IMG:Texture2D = preload("res://Assets/Bubbles/popped_bubble_1.png")
 @export var pop_sounds:Array[AudioStream]
-@onready var effect_sprite: AnimatedSprite2D = $EffectSprite
+@onready var effect_particle: CPUParticles2D = $EffectParticle
 
 @onready var area_2d: Area2D = $Area2D
-
-@export var selected_animation: String = ""
-
-func get_animation_list() -> Array:
-	if effect_sprite:
-		return effect_sprite.sprite_frames.get_animation_names()
-	return []
 
 var bubble_manager:BubbleManager
 
@@ -36,6 +29,5 @@ func pop():
 	audio_stream_player.play()
 	bubble_manager.on_bubble_popped(self)
 	area_2d.queue_free()
-	effect_sprite.visible = true
-	effect_sprite.global_position = global_position
-	effect_sprite.play(selected_animation)
+	effect_particle.global_position = global_position
+	effect_particle.emitting = true
