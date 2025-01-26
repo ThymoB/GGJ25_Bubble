@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_pgw43")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 3
 character = "Bubbler"
 line = "I’m sorry for all of this."

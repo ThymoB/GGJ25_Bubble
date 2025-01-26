@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_5ngim")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 1
 character = "Bubbler"
 line = "Lean back and relax…you’re here now."

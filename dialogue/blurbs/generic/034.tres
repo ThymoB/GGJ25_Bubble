@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_4n63f")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 1
 character = "Bubbler"
 line = "Don’t you wish this would just continue forever…and ever…and ever…and ever~"

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_8dw02")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 4
 character = "Bubbler"
 line = "*sigh of relief* You’re slowing down, finally."

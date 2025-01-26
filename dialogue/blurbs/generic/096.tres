@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_hkeg7")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 3
 character = "Bubbler"
 line = "I’m…not quite sure what to do."

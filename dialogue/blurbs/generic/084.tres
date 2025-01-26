@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_uwbwt")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 1
 character = "Bubbler"
 line = "I knew you were the right one. I knew you could do it."

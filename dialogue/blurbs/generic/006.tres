@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_lgbli")
-unique_to_act = false
-act = 0
+unique_to_act = true
+act = 1
 character = "Bubbler"
 line = "Empty your mind…focus on the bubbles…"
