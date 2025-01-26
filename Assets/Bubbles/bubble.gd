@@ -6,6 +6,7 @@ class_name Bubble
 @export var POPPED_IMG:Texture2D = preload("res://Assets/Bubbles/popped_bubble_1.png")
 @export var pop_sounds:Array[AudioStream]
 @onready var effect_particle: CPUParticles2D = $EffectParticle
+@onready var count_particle: CPUParticles2D = $CountParticle
 
 @onready var area_2d: Area2D = $Area2D
 
@@ -31,3 +32,6 @@ func pop():
 	area_2d.queue_free()
 	effect_particle.global_position = global_position
 	effect_particle.emitting = true
+	$CountParticle/SubViewport/Label.text = str(bubble_manager.bubbles_popped)
+	count_particle.emitting = true
+	

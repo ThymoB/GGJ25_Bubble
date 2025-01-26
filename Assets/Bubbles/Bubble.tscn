@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbgff0jwnlu8k"]
+[gd_scene load_steps=15 format=3 uid="uid://bbgff0jwnlu8k"]
 
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble.gd" id="1_0nqcw"]
 [ext_resource type="Texture2D" uid="uid://gv3h10wklm8x" path="res://Assets/Bubbles/unpopped_bubble_1.png" id="2_dh2g4"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dqi07qp8y67t7" path="res://Assets/Audio/ggj25_pop_03.wav" id="4_621s7"]
 [ext_resource type="AudioStream" uid="uid://cuut4t4j42jv5" path="res://Assets/Audio/ggj25_pop_04.wav" id="5_fvqn1"]
 [ext_resource type="Texture2D" uid="uid://dwmd3qr0h13n6" path="res://Assets/Effects/SparkleParticle.png" id="6_7t0id"]
+[ext_resource type="FontFile" uid="uid://6tligljd6e32" path="res://Assets/Fonts/Gaegu-Regular.ttf" id="8_eavmb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_naf0b"]
 particles_animation = true
@@ -17,6 +18,17 @@ particles_anim_loop = true
 [sub_resource type="Curve" id="Curve_eja31"]
 _data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(0.466292, 0.549451), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fj4ry"]
+viewport_path = NodePath("CountParticle/SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_ileqc"]
+offsets = PackedFloat32Array(0, 0.713333)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y52gv"]
+font = ExtResource("8_eavmb")
+font_size = 64
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ykr8"]
 radius = 8.0
@@ -45,8 +57,33 @@ scale_amount_curve = SubResource("Curve_eja31")
 anim_speed_min = 2.59
 anim_speed_max = 9.05
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="CountParticle" type="CPUParticles2D" parent="."]
 z_index = 1
+emitting = false
+amount = 4
+one_shot = true
+explosiveness = 1.0
+texture = SubResource("ViewportTexture_fj4ry")
+direction = Vector2(0, 0)
+spread = 90.0
+gravity = Vector2(0, -470)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+color_ramp = SubResource("Gradient_ileqc")
+
+[node name="SubViewport" type="SubViewport" parent="CountParticle"]
+transparent_bg = true
+size = Vector2i(64, 64)
+
+[node name="Label" type="Label" parent="CountParticle/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "19"
+label_settings = SubResource("LabelSettings_y52gv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.442105, 0.442105)
 texture = ExtResource("2_dh2g4")
 
