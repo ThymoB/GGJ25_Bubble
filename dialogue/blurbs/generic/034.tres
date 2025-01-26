@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://w38gosem8m4f"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://w38gosem8m4f"]
 
-[ext_resource type="Resource" uid="uid://dqxw5t84qxjv5" path="res://dialogue/blurbs/generic/blurb_generic_01_b.tres" id="1_iuna0"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_4n63f"]
 
 [resource]
 script = ExtResource("2_4n63f")
 unique_to_act = false
 act = 0
-character = "Bubbles"
-line = "“Have you ever tried making a popping sound with just your cheek?”"
-follow_up = ExtResource("1_iuna0")
+character = "Bubbler"
+line = "Don’t you wish this would just continue forever…and ever…and ever…and ever~"

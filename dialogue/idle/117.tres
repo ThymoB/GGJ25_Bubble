@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://e1xjblgkvdhc"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_oo4ui"]
+
+[resource]
+script = ExtResource("2_oo4ui")
+unique_to_act = false
+act = 0
+character = "Bubbler"
+line = "You really aren’t doing it. Why not?"

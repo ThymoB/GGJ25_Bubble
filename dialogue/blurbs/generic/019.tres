@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://mj5j4o1givd7"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://mj5j4o1givd7"]
 
-[ext_resource type="Resource" uid="uid://dqxw5t84qxjv5" path="res://dialogue/blurbs/generic/blurb_generic_01_b.tres" id="1_t12cr"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_wkr21"]
 
 [resource]
 script = ExtResource("2_wkr21")
 unique_to_act = false
 act = 0
-character = "Bubbles"
-line = "“Have you ever tried making a popping sound with just your cheek?”"
-follow_up = ExtResource("1_t12cr")
+character = "Bubbler"
+line = "Is there an order to things? Do some bubbles have more worth than others?"

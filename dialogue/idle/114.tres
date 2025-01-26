@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://vrl1f7peegnb"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_frare"]
+
+[resource]
+script = ExtResource("2_frare")
+unique_to_act = false
+act = 0
+character = "Bubbler"
+line = "Don’t leave. I can’t do this without you."

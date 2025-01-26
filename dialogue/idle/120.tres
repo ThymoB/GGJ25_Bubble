@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://btm4hl2pt2skj"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_ry4kp"]
+
+[resource]
+script = ExtResource("1_ry4kp")
+unique_to_act = false
+act = 0
+character = "Bubbler"
+line = "I thought I could trust you…"

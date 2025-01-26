@@ -110,4 +110,6 @@ func play_blurb():
 	blurbs.erase(random_blurb)
 
 func _on_idle_timer_timeout() -> void:
-	play_dialogue(idle_lines.pick_random())
+	play_dialogue(idle_lines[0])
+	idle_lines.remove_at(0)
+	idle_timer.start(7.0)

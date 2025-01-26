@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dl0w3fwf5a4r"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dl0w3fwf5a4r"]
 
-[ext_resource type="Resource" uid="uid://dqxw5t84qxjv5" path="res://dialogue/blurbs/generic/blurb_generic_01_b.tres" id="1_mw3sl"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_u3aqm"]
 
 [resource]
 script = ExtResource("2_u3aqm")
 unique_to_act = false
 act = 0
-character = "Bubbles"
-line = "“Have you ever tried making a popping sound with just your cheek?”"
-follow_up = ExtResource("1_mw3sl")
+character = "Bubbler"
+line = "You’re obsessed with that score…what if I just quickly… *score is lowered*, there we go, those are mine now."

@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://c4e6ubyde86vl"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c4e6ubyde86vl"]
 
-[ext_resource type="Resource" uid="uid://dqxw5t84qxjv5" path="res://dialogue/blurbs/generic/blurb_generic_01_b.tres" id="1_5csek"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_famic"]
 
 [resource]
 script = ExtResource("2_famic")
 unique_to_act = false
 act = 0
-character = "Bubbles"
-line = "“Have you ever tried making a popping sound with just your cheek?”"
-follow_up = ExtResource("1_5csek")
+character = "Bubbler"
+line = "This is your last warning!"
