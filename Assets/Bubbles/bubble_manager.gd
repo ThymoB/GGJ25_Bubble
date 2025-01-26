@@ -16,12 +16,15 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 @export var bubbles_to_spawn:=100
 @export var bubble_spacing:=75
 @export var row_size:=6
-@export var scroll_speed = 10
+@export var scroll_speed := 200
 
-@onready var center: Node2D = $Center
+@onready var bubble_root: Node2D = $Center
 
 var bubbles:Array[Bubble]
 var bubbles_popped:=0
+
+func index_bubbles(x: int, y: int) -> Bubble:
+	return bubbles[y * row_size + x]
 
 # Heat is built up by popping bubbles and decays linearly over time,
 # use it for informing gameplay events which depend on how fast bubbles are
@@ -57,6 +60,11 @@ func pick_random_bubble() -> PackedScene:
 
 func _ready() -> void:
 	instance = self
+<<<<<<< HEAD
+=======
+	#bubble_root the bubble_root in the middle of the screen
+	bubble_root.position.x = get_viewport().size.x*0.5
+>>>>>>> 44a8765 (Bubble indexing)
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
@@ -64,22 +72,29 @@ func _process(delta: float) -> void:
 	decay_heat(delta)
 	seconds_since_pop += delta
 	#move bubbles and wrap
-	center.position += Vector2(0,delta*-scroll_speed)
+	print(scroll_speed)
+	bubble_root.position += Vector2(0,delta*-scroll_speed)
 
 func spawn_bubbles():
-	var top_left_pos = center.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
 	for i in range(bubbles_to_spawn):
-		var selected_bubble = pick_random_bubble()
-		var new_bubble = selected_bubble.instantiate()
-		center.add_child(new_bubble)
-		var pos:Vector2
-		pos.x = top_left_pos.x + (i % row_size) * bubble_spacing
-		pos.y = center.global_position.y + floori(i / float(row_size)) * bubble_spacing
 		@warning_ignore("integer_division")
-		pos.x += (i / row_size) % 2 * bubble_spacing / 2.0
-		new_bubble.global_position = pos
-		new_bubble.bubble_manager = self
-		bubbles.append(new_bubble)
+		var index_y = i / row_size
+		var index_x = i % row_size
+		spawn_bubble(index_x, index_y)
+
+func spawn_bubble(index_x: int, index_y: int):
+	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
+	var selected_bubble = pick_random_bubble()
+	var new_bubble = selected_bubble.instantiate()
+	bubble_root.add_child(new_bubble)
+	
+	var pos:Vector2
+	pos.x = top_left_pos.x + index_x * bubble_spacing
+	pos.y = bubble_root.global_position.y + index_y * bubble_spacing
+	pos.x += index_y % 2 * bubble_spacing / 2.0
+	new_bubble.global_position = pos
+	new_bubble.bubble_manager = self
+	bubbles.append(new_bubble)
 
 # Do cool stuff here
 # You can check bubbles_popped to see how many bubbles have been popped
