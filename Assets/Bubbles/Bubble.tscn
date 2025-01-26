@@ -15,8 +15,8 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [sub_resource type="Curve" id="Curve_eja31"]
-_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(0.466292, 0.549451), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ykr8"]
 radius = 8.0
@@ -27,6 +27,7 @@ script = ExtResource("1_0nqcw")
 pop_sounds = Array[AudioStream]([ExtResource("2_efnlk"), ExtResource("3_q4fcs"), ExtResource("4_621s7"), ExtResource("5_fvqn1")])
 
 [node name="EffectParticle" type="CPUParticles2D" parent="."]
+z_index = 2
 material = SubResource("CanvasItemMaterial_naf0b")
 position = Vector2(100, 100)
 emitting = false
@@ -45,6 +46,7 @@ anim_speed_min = 2.59
 anim_speed_max = 9.05
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.442105, 0.442105)
 texture = ExtResource("2_dh2g4")
 

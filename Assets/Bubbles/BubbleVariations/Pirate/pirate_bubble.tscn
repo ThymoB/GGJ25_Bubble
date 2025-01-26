@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dda7w0eokrquc"]
+
+[ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_ybkvx"]
+[ext_resource type="AudioStream" uid="uid://nqb3qnd3iv8m" path="res://Assets/Bubbles/BubbleVariations/Pirate/shiver-me-timbers.wav" id="2_53cf8"]
+[ext_resource type="Texture2D" uid="uid://b5625mry4hvqt" path="res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.png" id="2_f4crb"]
+[ext_resource type="Texture2D" uid="uid://blrrru0kqoe11" path="res://Assets/Effects/CoinParticle.png" id="3_7khob"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_btxf4"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[node name="Bubble" instance=ExtResource("1_ybkvx")]
+pop_sounds = Array[AudioStream]([ExtResource("2_53cf8")])
+
+[node name="EffectParticle" parent="." index="0"]
+material = SubResource("CanvasItemMaterial_btxf4")
+lifetime = 2.0
+texture = ExtResource("3_7khob")
+gravity = Vector2(0, 470)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+scale_amount_curve = null
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_f4crb")
