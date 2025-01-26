@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1q30xm2gi5se"]
+
+[ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_o6m54"]
+[ext_resource type="Script" path="res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.gd" id="2_n3bry"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_khgbj"]
+viewport_path = NodePath("CountParticle/SubViewport")
+
+[sub_resource type="Animation" id="Animation_cnuvc"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oev73"]
+_data = {
+"shake": SubResource("Animation_cnuvc")
+}
+
+[node name="Bubble" instance=ExtResource("1_o6m54")]
+script = ExtResource("2_n3bry")
+max_distance = 150.0
+max_shake_strength = 0.7
+shake_duration = 0.5
+
+[node name="CountParticle" parent="." index="1"]
+texture = SubResource("ViewportTexture_khgbj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_oev73")
+}
