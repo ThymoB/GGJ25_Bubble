@@ -4,6 +4,11 @@ class_name BubbleManager
 
 const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
+@export var bubble_types: Array = [
+	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 85.0},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 10.0},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.tscn"), "chance": 5.0}]
+	
 @export var bubbles_to_spawn:=100
 @export var bubble_spacing:=75
 @export var row_size:=6
@@ -24,6 +29,26 @@ const HEAT_DECAY_PER_SEC := 0.1
 
 var seconds_since_pop = 0.0
 
+func pick_random_bubble() -> PackedScene:
+	var total_weight = 0
+	
+	# Calculate the total weight
+	for item in bubble_types:
+		total_weight += item["chance"]
+	
+	# Generate a random number within the total weight range
+	var random_value = randf() * total_weight
+	var cumulative_weight = 0
+	
+	# Iterate over the scenes and select one based on the random value
+	for item in bubble_types:
+		cumulative_weight += item["chance"]
+		if random_value < cumulative_weight:
+			return item["scene"]
+	
+	# Fallback (should never hit this if data is correctly configured)
+	return bubble_types[0]["scene"]
+
 func _ready() -> void:
 	spawn_bubbles()
 	
@@ -36,7 +61,8 @@ func _process(delta: float) -> void:
 func spawn_bubbles():
 	var top_left_pos = center.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
 	for i in range(bubbles_to_spawn):
-		var new_bubble = BUBBLE_SCENE.instantiate()
+		var selected_bubble = pick_random_bubble()
+		var new_bubble = selected_bubble.instantiate()
 		center.add_child(new_bubble)
 		var pos:Vector2
 		pos.x = top_left_pos.x + (i % row_size) * bubble_spacing
