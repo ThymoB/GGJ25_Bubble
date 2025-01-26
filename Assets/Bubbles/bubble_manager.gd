@@ -20,7 +20,9 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 	
 @export var bubble_spacing:=75
 @export var row_size:=6
-@export var scroll_speed := 200
+@export var base_speed := 5
+@export var scroll_speed := 5
+@export var max_speed := 40
 
 @onready var bubble_root: Node2D = $Center
 
@@ -78,9 +80,21 @@ func _process(delta: float) -> void:
 	despawn_offscreen()
 	spawn_bubbles()
 	decay_heat(delta)
+	update_speed()
 	seconds_since_pop += delta
 	#move bubbles and wrap
 	bubble_root.position += Vector2(0,delta*-scroll_speed)
+
+func update_speed():
+	var num_popped = 0
+	for bubble in bubbles:
+		if bubble.is_popped():
+			num_popped += 1
+
+	var precent_popped = float(num_popped) / float(bubbles.size())
+	print(precent_popped)
+
+	scroll_speed = lerp(base_speed, max_speed, precent_popped)
 
 func spawn_bubbles():
 	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
