@@ -16,7 +16,7 @@ offset_left = 10.0
 offset_right = 790.0
 offset_bottom = 27.0
 
-[node name="LeftWing" type="Node" parent="."]
+[node name="LeftWing" type="Node2D" parent="."]
 
 [node name="Bubble_L1" parent="LeftWing" instance=ExtResource("3_vb1fu")]
 position = Vector2(116, 379)
@@ -34,7 +34,7 @@ script = ExtResource("4_l857u")
 position = Vector2(317, 582)
 script = ExtResource("4_l857u")
 
-[node name="RightWing" type="Node" parent="."]
+[node name="RightWing" type="Node2D" parent="."]
 
 [node name="Bubble_R1" parent="RightWing" instance=ExtResource("3_vb1fu")]
 position = Vector2(673, 379)
@@ -51,3 +51,7 @@ script = ExtResource("4_l857u")
 [node name="Bubble_R4" parent="RightWing" instance=ExtResource("3_vb1fu")]
 position = Vector2(508, 586)
 script = ExtResource("4_l857u")
+
+[node name="ResetTimer" type="Timer" parent="."]
+
+[node name="HideTimer" type="Timer" parent="."]
