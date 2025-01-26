@@ -32,6 +32,7 @@ func pop():
 	area_2d.queue_free()
 	effect_particle.global_position = global_position
 	effect_particle.emitting = true
+	count_particle.amount = bubble_manager.bubbles_popped
 	$CountParticle/SubViewport/Label.text = str(bubble_manager.bubbles_popped)
 	count_particle.emitting = true
 	

@@ -23,8 +23,8 @@ point_count = 3
 viewport_path = NodePath("CountParticle/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_ileqc"]
-offsets = PackedFloat32Array(0, 0.713333)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.293333, 0.46)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.884058, 1, 1, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_y52gv"]
 font = ExtResource("8_eavmb")
@@ -60,7 +60,7 @@ anim_speed_max = 9.05
 [node name="CountParticle" type="CPUParticles2D" parent="."]
 z_index = 1
 emitting = false
-amount = 4
+amount = 6
 one_shot = true
 explosiveness = 1.0
 texture = SubResource("ViewportTexture_fj4ry")
