@@ -23,7 +23,6 @@ func is_popped()->bool:
 
 func pop():
 	bubble_manager.bubbles_popped += 1
-	print("Bubbles popped: " + str(bubble_manager.bubbles_popped))
 	sprite.texture = POPPED_IMG
 	audio_stream_player.pitch_scale = randf_range(0.75,1.25)
 	audio_stream_player.stream = pop_sounds.pick_random()
