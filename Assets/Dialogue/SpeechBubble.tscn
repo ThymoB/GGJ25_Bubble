@@ -26,14 +26,14 @@ text = "Bubbler"
 
 [node name="Body" type="RichTextLabel" parent="."]
 z_index = 1
-offset_left = -122.0
+offset_left = -152.0
 offset_top = -51.0
-offset_right = 131.0
-offset_bottom = 41.0
+offset_right = 145.0
+offset_bottom = 63.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1p18r")
 theme_override_font_sizes/normal_font_size = 24
-text = "This is a dialogue. This is what I'm saying about you."
+text = "This is a dialogue. This is what I'm saying about you. Lorem ipsum dolores je moederrrrrrrr"
 scroll_active = false
 
 [node name="Area2D" type="Area2D" parent="."]
