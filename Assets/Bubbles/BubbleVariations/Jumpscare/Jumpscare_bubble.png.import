@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4woxa1b5akq8"
-path="res://.godot/imported/popcorn_bubble.png-af8d86bf92e2dbf57fb1b5f8b5f16af5.ctex"
+uid="uid://bejfl1fea1umo"
+path="res://.godot/imported/Jumpscare_bubble.png-0eeabcbda16d76270d107e4822115038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bubbles/BubbleVariations/popcorn_bubble.png"
-dest_files=["res://.godot/imported/popcorn_bubble.png-af8d86bf92e2dbf57fb1b5f8b5f16af5.ctex"]
+source_file="res://Assets/Bubbles/BubbleVariations/Jumpscare/Jumpscare_bubble.png"
+dest_files=["res://.godot/imported/Jumpscare_bubble.png-0eeabcbda16d76270d107e4822115038.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bejfl1fea1umo"
-path="res://.godot/imported/Jumpscare_bubble.png-deae984a2ea6b3584b5557131ecbc18f.ctex"
+uid="uid://535if165tubg"
+path="res://.godot/imported/leaf_bubble.png-50d641414047718b84dafaed0e573193.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bubbles/BubbleVariations/Jumpscare_bubble.png"
-dest_files=["res://.godot/imported/Jumpscare_bubble.png-deae984a2ea6b3584b5557131ecbc18f.ctex"]
+source_file="res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.png"
+dest_files=["res://.godot/imported/leaf_bubble.png-50d641414047718b84dafaed0e573193.ctex"]
 
 [params]
 

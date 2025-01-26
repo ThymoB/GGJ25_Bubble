@@ -8,7 +8,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @export var bubble_types: Array = [
 	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 75.0},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 10.0},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Flower/flower_bubble.tscn"), "chance": 10.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.tscn"), "chance": 5.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0}]
@@ -57,8 +57,6 @@ func pick_random_bubble() -> PackedScene:
 
 func _ready() -> void:
 	instance = self
-	#center the center in the middle of the screen
-	center.position.x = get_viewport().size.x*0.5
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
