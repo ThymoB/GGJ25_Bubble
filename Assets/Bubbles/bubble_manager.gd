@@ -13,13 +13,19 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0,"act":3},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0,"act":2},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.tscn"), "chance": 8.0,"act":1},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 5.0,"act":2}]
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Cat/cat_bubble.tscn"), "chance": 5.0,"act":2},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Corn/popcorn_bubble.tscn"), "chance": 5.0,"act":1},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Disco/disco_bubble.tscn"), "chance": 5.0,"act":3},
+	]
 	
 @export var bubble_spacing:=75
 @export var row_size:=6
-@export var scroll_speed := 200
+@export var base_speed := 5
+@export var scroll_speed := 5
+@export var max_speed := 40
 
 @onready var bubble_root: Node2D = $Center
+@onready var background: Sprite2D = $Background
 
 var bubbles:Array[Bubble]
 var bubbles_popped:=0
@@ -68,6 +74,9 @@ func _ready() -> void:
 	instance = self
 	#bubble_root the bubble_root in the middle of the screen
 	bubble_root.position.x = get_viewport().size.x*0.5
+
+	# hack for web build
+	background.position.x = get_viewport().size.x*0.5
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
@@ -75,9 +84,19 @@ func _process(delta: float) -> void:
 	despawn_offscreen()
 	spawn_bubbles()
 	decay_heat(delta)
+	update_speed()
 	seconds_since_pop += delta
 	#move bubbles and wrap
 	bubble_root.position += Vector2(0,delta*-scroll_speed)
+
+func update_speed():
+	var num_popped = 0
+	for bubble in bubbles:
+		if bubble.is_popped():
+			num_popped += 1
+
+	var precent_popped = float(num_popped) / float(bubbles.size())
+	scroll_speed = lerp(base_speed, max_speed, precent_popped)
 
 func spawn_bubbles():
 	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
