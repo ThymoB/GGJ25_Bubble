@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://qtcuusifew02"]
+
+[ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_88a2f"]
+[ext_resource type="Script" path="res://Assets/Achievements/achievement_popup.gd" id="1_m8pyb"]
+
+[node name="AchievementPopup" type="Node2D"]
+script = ExtResource("1_m8pyb")
+
+[node name="BackgroundTemp" type="Sprite2D" parent="."]
+position = Vector2(0, -1.99999)
+scale = Vector2(0.177835, 0.0345)
+texture = ExtResource("1_88a2f")
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = -81.0
+offset_right = 247.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Achievement Unlocked![/center]"
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = -47.0
+offset_right = 247.0
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][b]Popped Scared Bubbles[/b][/center]"
+
+[node name="Title2" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = -16.0
+offset_right = 247.0
+offset_bottom = 154.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Destroyed 5 Scared Bubbles in a row![/center]"

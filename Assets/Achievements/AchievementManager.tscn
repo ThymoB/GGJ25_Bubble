@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0nj6fb3yp61h"]
+
+[ext_resource type="Script" path="res://Assets/Achievements/achievement_manager.gd" id="1_np73n"]
+
+[node name="AchievementManager" type="Node"]
+script = ExtResource("1_np73n")
