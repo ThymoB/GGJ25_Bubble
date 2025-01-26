@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dypw60j4qc7vo"]
+[gd_scene load_steps=6 format=3 uid="uid://dypw60j4qc7vo"]
 
 [ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_uemke"]
+[ext_resource type="AudioStream" uid="uid://dd1i327no7e4m" path="res://Assets/Bubbles/BubbleVariations/Leaf/leaf_sound.wav" id="2_44u4d"]
 [ext_resource type="Texture2D" uid="uid://535if165tubg" path="res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.png" id="2_y7yg2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bjku8"]
@@ -13,6 +14,7 @@ particles_anim_loop = false
 viewport_path = NodePath("CountParticle/SubViewport")
 
 [node name="Bubble" instance=ExtResource("1_uemke")]
+pop_sounds = Array[AudioStream]([ExtResource("2_44u4d")])
 
 [node name="EffectParticle" parent="." index="0"]
 material = SubResource("CanvasItemMaterial_bjku8")
