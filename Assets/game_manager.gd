@@ -7,7 +7,8 @@ signal on_bubble_manager_created(bubble_manager:BubbleManager)
 @export var act_pop_thresholds:=[
 	25,
 	50,
-	75
+	75,
+	100,
 ]
 
 func get_current_act()->int:
@@ -16,3 +17,10 @@ func get_current_act()->int:
 		if BubbleManager.instance.bubbles_popped >= threshold:
 			act += 1
 	return act
+
+func _process(delta: float):
+	if !BubbleManager || !BubbleManager.instance:
+		return
+
+	if get_current_act() >= 4:
+		get_tree().change_scene_to_file("res://Assets/Levels/BossTransition.tscn")
