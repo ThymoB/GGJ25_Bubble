@@ -1,6 +1,5 @@
 extends Sprite2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var new_texture
@@ -14,7 +13,3 @@ func _ready() -> void:
 		3:
 			new_texture = preload("res://Assets/Hand/arm-4.png")
 	self.texture = new_texture
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

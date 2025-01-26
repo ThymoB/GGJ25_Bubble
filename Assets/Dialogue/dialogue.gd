@@ -7,6 +7,7 @@ class_name Dialogue
 @export var character:String
 @export var line: String
 @export var audio_clip:AudioStream
+@export var sprite:Texture2D = null
 
 @export var follow_up:Dialogue
 

@@ -4,6 +4,7 @@ class_name SpeechBubble
 
 @onready var title: RichTextLabel = $Title
 @onready var body: RichTextLabel = $Body
+@onready var character: Sprite2D = $Character
 
 @onready var lifetime: Timer = $Lifetime
 
@@ -13,6 +14,7 @@ func populate(in_dialogue:Dialogue):
 	dialogue = in_dialogue
 	title.text = dialogue.character
 	body.text = dialogue.line
+	character.texture = dialogue.sprite
 
 func close_dialogue():
 	var play_follow_up:bool = dialogue.follow_up and DialogueManager.current_bubble and DialogueManager.current_bubble.dialogue == self

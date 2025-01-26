@@ -55,7 +55,7 @@ shape = SubResource("CircleShape2D_85quj")
 [node name="Scaler" type="Node2D" parent="."]
 
 [node name="Hand_Sprite2D" type="Sprite2D" parent="Scaler"]
-z_index = 2
+z_index = 100
 position = Vector2(133, 182)
 rotation = -0.507891
 scale = Vector2(0.485, 0.485)
@@ -66,7 +66,3 @@ script = ExtResource("3_qkmde")
 libraries = {
 "": SubResource("AnimationLibrary_li0ml")
 }
-
-[connection signal="area_entered" from="HandCollision_Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_shape_entered" from="HandCollision_Area2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="HandCollision_Area2D" to="." method="_on_area_2d_body_entered"]
