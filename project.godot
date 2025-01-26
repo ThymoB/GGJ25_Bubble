@@ -19,6 +19,7 @@ config/icon="res://Assets/Bubbles/bubble_temp.png"
 
 HandSkinManager="*res://Assets/Hand/HandSkinManager.tscn"
 DialogueManager="*res://Assets/Dialogue/DialogueManager.tscn"
+GameManager="*res://Assets/GameManager.tscn"
 
 [display]
 

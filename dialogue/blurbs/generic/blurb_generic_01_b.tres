@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dqxw5t84qxjv5"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_xwp2u"]
+
+[resource]
+script = ExtResource("1_xwp2u")
+unique_to_act = false
+act = 1
+character = "Bubbles"
+line = "“You should try it. It’s fun.”"

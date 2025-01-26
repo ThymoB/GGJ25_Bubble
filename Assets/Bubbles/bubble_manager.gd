@@ -2,6 +2,8 @@ extends Node
 
 class_name BubbleManager
 
+signal bubble_popped_signal(bubble:Bubble)
+
 const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @export var bubble_types: Array = [
@@ -30,6 +32,8 @@ const HEAT_DECAY_PER_SEC := 0.1
 
 var seconds_since_pop = 0.0
 
+static var instance:BubbleManager
+
 func pick_random_bubble() -> PackedScene:
 	var total_weight = 0
 	
@@ -51,6 +55,8 @@ func pick_random_bubble() -> PackedScene:
 	return bubble_types[0]["scene"]
 
 func _ready() -> void:
+	instance = self
+	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
 func _process(delta: float) -> void:
@@ -77,6 +83,7 @@ func spawn_bubbles():
 # Do cool stuff here
 # You can check bubbles_popped to see how many bubbles have been popped
 func on_bubble_popped(bubble:Bubble):
+	bubble_popped_signal.emit(bubble)
 	add_heat()
 	seconds_since_pop = 0.0 
 	try_trigger_dialogue()

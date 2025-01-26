@@ -11,6 +11,8 @@
 
 [node name="BubbleManager" type="Node" parent="."]
 script = ExtResource("4_ayyo3")
+bubbles_to_spawn = 500
+scroll_speed = 5
 
 [node name="Center" type="Node2D" parent="BubbleManager"]
 position = Vector2(300, 399)
