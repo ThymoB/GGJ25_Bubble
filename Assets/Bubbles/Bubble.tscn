@@ -27,6 +27,7 @@ script = ExtResource("1_0nqcw")
 pop_sounds = Array[AudioStream]([ExtResource("2_efnlk"), ExtResource("3_q4fcs"), ExtResource("4_621s7"), ExtResource("5_fvqn1")])
 
 [node name="EffectParticle" type="CPUParticles2D" parent="."]
+z_index = 2
 material = SubResource("CanvasItemMaterial_naf0b")
 position = Vector2(100, 100)
 emitting = false
@@ -45,6 +46,7 @@ anim_speed_min = 2.59
 anim_speed_max = 9.05
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.442105, 0.442105)
 texture = ExtResource("2_dh2g4")
 
