@@ -18,7 +18,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Disco/disco_bubble.tscn"), "chance": 5.0,"act":3},
 	]
 	
-@export var bubble_spacing:=75
+@export var bubble_spacing:=79
 @export var row_size:=6
 @export var base_speed := 5
 @export var scroll_speed := 5
@@ -32,6 +32,8 @@ var bubbles_popped:=0
 
 var bubbles_begin_index_y := 0
 var bubbles_end_index_y := 0
+
+var disco_spawned = false
 
 func index_bubbles(x: int, y: int) -> Bubble:
 	return bubbles[(y - bubbles_begin_index_y) * row_size + x]
@@ -61,7 +63,15 @@ func pick_random_bubble() -> PackedScene:
 	var cumulative_weight = 0
 	
 	# Iterate over the scenes and select one based on the random value
-	for item in bubble_types:
+	for i in range(0, bubble_types.size()):
+		var item = bubble_types[i]
+
+		if i == bubble_types.size() - 1:
+			if disco_spawned == false:
+				disco_spawned = true
+			else:
+				continue
+
 		if item["act"] == GameManager.get_current_act() or item["act"]==0:
 			cumulative_weight += item["chance"]
 			if random_value < cumulative_weight:
