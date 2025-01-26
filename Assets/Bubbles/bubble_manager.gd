@@ -92,8 +92,6 @@ func update_speed():
 			num_popped += 1
 
 	var precent_popped = float(num_popped) / float(bubbles.size())
-	print(precent_popped)
-
 	scroll_speed = lerp(base_speed, max_speed, precent_popped)
 
 func spawn_bubbles():
