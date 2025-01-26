@@ -4,6 +4,7 @@
 
 [node name="DialogueManager" type="Node"]
 script = ExtResource("1_o4klo")
+blurb_cooldown = 7.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
