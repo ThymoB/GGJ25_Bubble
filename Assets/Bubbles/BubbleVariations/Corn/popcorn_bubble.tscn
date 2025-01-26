@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://crnxth3sajurt"]
+
+[ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_di4r4"]
+[ext_resource type="Texture2D" uid="uid://b4woxa1b5akq8" path="res://Assets/Bubbles/BubbleVariations/Corn/popcorn_bubble.png" id="2_unijn"]
+[ext_resource type="Texture2D" uid="uid://ug3vxoj32nw" path="res://Assets/Bubbles/BubbleVariations/Corn/corn_bubble.png" id="3_3mf02"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_266qm"]
+viewport_path = NodePath("CountParticle/SubViewport")
+
+[node name="Bubble" instance=ExtResource("1_di4r4")]
+POPPED_IMG = ExtResource("2_unijn")
+
+[node name="CountParticle" parent="." index="1"]
+texture = SubResource("ViewportTexture_266qm")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("3_3mf02")

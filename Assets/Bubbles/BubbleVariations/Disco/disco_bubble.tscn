@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0ki61308dpu"]
+
+[ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_jwrkb"]
+[ext_resource type="Texture2D" uid="uid://ds4onsx2f8do7" path="res://Assets/Bubbles/BubbleVariations/Disco/discoball.png" id="2_5dnqf"]
+[ext_resource type="Script" path="res://Assets/Bubbles/BubbleVariations/Disco/disco_bubble.gd" id="2_qfhvg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_45nno"]
+viewport_path = NodePath("CountParticle/SubViewport")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nlhh"]
+atlas = ExtResource("2_5dnqf")
+region = Rect2(0, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g18aw"]
+atlas = ExtResource("2_5dnqf")
+region = Rect2(54, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1glv3"]
+atlas = ExtResource("2_5dnqf")
+region = Rect2(108, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prmnc"]
+atlas = ExtResource("2_5dnqf")
+region = Rect2(162, 0, 54, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qgeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nlhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g18aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1glv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prmnc")
+}],
+"loop": true,
+"name": &"Disco",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_agjfw"]
+resource_name = "sprite_animation"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_exacd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3byv"]
+_data = {
+"RESET": SubResource("Animation_exacd"),
+"sprite_animation": SubResource("Animation_agjfw")
+}
+
+[node name="Bubble" instance=ExtResource("1_jwrkb")]
+script = ExtResource("2_qfhvg")
+
+[node name="CountParticle" parent="." index="1"]
+texture = SubResource("ViewportTexture_45nno")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_3qgeg")
+animation = &"Disco"
+frame_progress = 0.0400105
+
+[node name="Sprite" parent="." index="3"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_o3byv")
+}
