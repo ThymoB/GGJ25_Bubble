@@ -8,6 +8,8 @@ class_name Bubble
 @onready var effect_particle: CPUParticles2D = $EffectParticle
 @onready var count_particle: CPUParticles2D = $CountParticle
 
+@export var appears_in_act:int = 1
+
 @onready var area_2d: Area2D = $Area2D
 
 var bubble_manager:BubbleManager

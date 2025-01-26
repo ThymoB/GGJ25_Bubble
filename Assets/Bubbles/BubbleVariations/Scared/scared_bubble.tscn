@@ -31,6 +31,7 @@ script = ExtResource("2_n3bry")
 max_distance = 150.0
 max_shake_strength = 0.7
 shake_duration = 0.5
+appears_in_act = 3
 
 [node name="CountParticle" parent="." index="1"]
 texture = SubResource("ViewportTexture_khgbj")

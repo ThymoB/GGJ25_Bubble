@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dylut4fqkgmnp"]
+[gd_scene load_steps=8 format=3 uid="uid://dylut4fqkgmnp"]
 
 [ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_rodok"]
 [ext_resource type="Texture2D" uid="uid://xt65ijhwhfxv" path="res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.png" id="2_otl0c"]
@@ -17,8 +17,12 @@ max_value = 3.0
 _data = [Vector2(0, 1.48352), 0.0, 0.0, 0, 0, Vector2(0.994382, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_b8d01"]
+viewport_path = NodePath("CountParticle/SubViewport")
+
 [node name="Bubble" instance=ExtResource("1_rodok")]
 pop_sounds = Array[AudioStream]([ExtResource("3_o5v7k")])
+appears_in_act = 3
 
 [node name="EffectParticle" parent="." index="0"]
 material = SubResource("CanvasItemMaterial_pyjql")
@@ -35,5 +39,8 @@ anim_speed_min = 1.0
 anim_speed_max = 2.0
 anim_speed_curve = SubResource("Curve_fed8n")
 
-[node name="Sprite" parent="." index="1"]
+[node name="CountParticle" parent="." index="1"]
+texture = SubResource("ViewportTexture_b8d01")
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_otl0c")
