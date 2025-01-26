@@ -1,11 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbgff0jwnlu8k"]
+[gd_scene load_steps=12 format=3 uid="uid://bbgff0jwnlu8k"]
 
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble.gd" id="1_0nqcw"]
+[ext_resource type="AudioStream" uid="uid://cxftjqpp03l1g" path="res://Assets/Audio/ggj25_pop_old.wav" id="2_6plfx"]
 [ext_resource type="Texture2D" uid="uid://gv3h10wklm8x" path="res://Assets/Bubbles/unpopped_bubble_1.png" id="2_dh2g4"]
-[ext_resource type="AudioStream" uid="uid://cxkeacdujwxyq" path="res://Assets/Audio/ggj25_pop_01.wav" id="2_efnlk"]
-[ext_resource type="AudioStream" uid="uid://b2ci4te7v1ppn" path="res://Assets/Audio/ggj25_pop_02.wav" id="3_q4fcs"]
-[ext_resource type="AudioStream" uid="uid://dqi07qp8y67t7" path="res://Assets/Audio/ggj25_pop_03.wav" id="4_621s7"]
-[ext_resource type="AudioStream" uid="uid://cuut4t4j42jv5" path="res://Assets/Audio/ggj25_pop_04.wav" id="5_fvqn1"]
 [ext_resource type="Texture2D" uid="uid://dwmd3qr0h13n6" path="res://Assets/Effects/SparkleParticle.png" id="6_7t0id"]
 [ext_resource type="FontFile" uid="uid://6tligljd6e32" path="res://Assets/Fonts/Gaegu-Regular.ttf" id="8_eavmb"]
 
@@ -36,7 +33,7 @@ radius = 8.0
 [node name="Bubble" type="Node2D"]
 self_modulate = Color(0.913725, 0.952941, 1, 1)
 script = ExtResource("1_0nqcw")
-pop_sounds = Array[AudioStream]([ExtResource("2_efnlk"), ExtResource("3_q4fcs"), ExtResource("4_621s7"), ExtResource("5_fvqn1")])
+pop_sounds = Array[AudioStream]([ExtResource("2_6plfx")])
 
 [node name="EffectParticle" type="CPUParticles2D" parent="."]
 z_index = 2
