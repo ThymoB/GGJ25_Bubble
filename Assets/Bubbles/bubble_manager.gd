@@ -15,15 +15,20 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.tscn"), "chance": 8.0,"act":1},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 5.0,"act":2}]
 	
-@export var bubbles_to_spawn:=100
 @export var bubble_spacing:=75
 @export var row_size:=6
-@export var scroll_speed = 10
+@export var scroll_speed := 200
 
-@onready var center: Node2D = $Center
+@onready var bubble_root: Node2D = $Center
 
 var bubbles:Array[Bubble]
 var bubbles_popped:=0
+
+var bubbles_begin_index_y := 0
+var bubbles_end_index_y := 0
+
+func index_bubbles(x: int, y: int) -> Bubble:
+	return bubbles[(y - bubbles_begin_index_y) * row_size + x]
 
 # Heat is built up by popping bubbles and decays linearly over time,
 # use it for informing gameplay events which depend on how fast bubbles are
@@ -61,29 +66,56 @@ func pick_random_bubble() -> PackedScene:
 
 func _ready() -> void:
 	instance = self
+	#bubble_root the bubble_root in the middle of the screen
+	bubble_root.position.x = get_viewport().size.x*0.5
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
 func _process(delta: float) -> void:
+	despawn_offscreen()
+	spawn_bubbles()
 	decay_heat(delta)
 	seconds_since_pop += delta
 	#move bubbles and wrap
-	center.position += Vector2(0,delta*-scroll_speed)
+	bubble_root.position += Vector2(0,delta*-scroll_speed)
 
 func spawn_bubbles():
-	var top_left_pos = center.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
-	for i in range(bubbles_to_spawn):
-		var selected_bubble = pick_random_bubble()
-		var new_bubble = selected_bubble.instantiate()
-		center.add_child(new_bubble)
-		var pos:Vector2
-		pos.x = top_left_pos.x + (i % row_size) * bubble_spacing
-		pos.y = center.global_position.y + floori(i / float(row_size)) * bubble_spacing
-		@warning_ignore("integer_division")
-		pos.x += (i / row_size) % 2 * bubble_spacing / 2.0
-		new_bubble.global_position = pos
-		new_bubble.bubble_manager = self
-		bubbles.append(new_bubble)
+	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
+	var viewport_height = get_viewport().size.y
+	var bottom_y = -top_left_pos.y + viewport_height
+
+	#index of the bottom of the screen
+	var bottom_index = bottom_y / bubble_spacing
+
+	while (bottom_index > bubbles_end_index_y):
+		bubbles_end_index_y += 1
+		for i in range(0, row_size):
+			spawn_bubble(i, bubbles_end_index_y)
+
+func despawn_offscreen():
+	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
+
+	while !bubbles.is_empty() && (bubbles[0].index_y * bubble_spacing + top_left_pos.y) < -bubble_spacing:
+		bubbles[0].queue_free()
+		bubbles.pop_front()
+
+func spawn_bubble(index_x: int, index_y: int):
+	var top_left_pos = bubble_root.global_position - Vector2(bubble_spacing * row_size / 2.0, 0)
+	var selected_bubble = pick_random_bubble()
+	var new_bubble = selected_bubble.instantiate()
+	bubble_root.add_child(new_bubble)
+	
+	var pos:Vector2
+	pos.x = top_left_pos.x + index_x * bubble_spacing
+	pos.y = bubble_root.global_position.y + index_y * bubble_spacing
+	pos.x += index_y % 2 * bubble_spacing / 2.0
+
+	new_bubble.index_x = index_x
+	new_bubble.index_y = index_y
+	new_bubble.global_position = pos
+	new_bubble.bubble_manager = self
+
+	bubbles.append(new_bubble)
 
 # Do cool stuff here
 # You can check bubbles_popped to see how many bubbles have been popped
