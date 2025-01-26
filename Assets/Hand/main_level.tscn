@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxkvsimh2pqg3"]
+[gd_scene load_steps=8 format=3 uid="uid://cxkvsimh2pqg3"]
 
 [ext_resource type="Texture2D" uid="uid://cuaxhkqgg8fyf" path="res://Assets/Background/background_temp.jpg" id="1_ic0rq"]
 [ext_resource type="Texture2D" uid="uid://bx6rf6xlbvvur" path="res://Assets/Background/base_start.png" id="2_xbt6e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="4_ayyo3"]
 [ext_resource type="PackedScene" uid="uid://wfry68h7pjcx" path="res://Assets/Hand/HandV2.tscn" id="4_t0dxe"]
 [ext_resource type="AudioStream" uid="uid://bsd78tqumaoxr" path="res://Assets/Audio/ggj25_01_ambient.mp3" id="6_o6ssd"]
+[ext_resource type="Texture2D" uid="uid://br06rfjj6p1sm" path="res://Assets/Background/CozyTableBackground.jpg" id="7_dmgkj"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -31,15 +32,13 @@ texture = ExtResource("3_3hxnc")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 576.0
+offset_left = -288.0
+offset_right = 288.0
 offset_bottom = 1024.0
 grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 1
 
 [node name="Background" type="TextureRect" parent="UI"]
@@ -48,6 +47,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -533.0
+offset_top = -35.0
+offset_right = -532.898
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -61,3 +64,8 @@ autoplay = true
 
 [node name="HandV2" parent="." instance=ExtResource("4_t0dxe")]
 position = Vector2(200, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 480.275)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_dmgkj")

@@ -57,6 +57,8 @@ func pick_random_bubble() -> PackedScene:
 
 func _ready() -> void:
 	instance = self
+	#center the center in the middle of the screen
+	center.position.x = get_viewport().size.x*0.5
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
