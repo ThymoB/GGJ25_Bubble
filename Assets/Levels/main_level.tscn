@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxkvsimh2pqg3"]
+
+[ext_resource type="Script" path="res://Assets/Bubbles/bubble_manager.gd" id="1_ipen2"]
+[ext_resource type="Texture2D" uid="uid://bx6rf6xlbvvur" path="res://Assets/Background/base_start.png" id="2_8270q"]
+[ext_resource type="Texture2D" uid="uid://dgx4a76c0ht5c" path="res://Assets/Background/base_endless.png" id="3_757ay"]
+[ext_resource type="AudioStream" uid="uid://bsd78tqumaoxr" path="res://Assets/Audio/ggj25_01_ambient.mp3" id="4_tpgdy"]
+[ext_resource type="PackedScene" uid="uid://wfry68h7pjcx" path="res://Assets/Hand/HandV2.tscn" id="5_m78cc"]
+[ext_resource type="Texture2D" uid="uid://br06rfjj6p1sm" path="res://Assets/Background/CozyTableBackground.jpg" id="6_sp87f"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="BubbleManager" type="Node" parent="."]
+script = ExtResource("1_ipen2")
+
+[node name="Center" type="Node2D" parent="BubbleManager"]
+position = Vector2(300, 399)
+
+[node name="SpriteWrapStart" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.913822, 0.952077, 1, 1)
+position = Vector2(-16, 368)
+scale = Vector2(0.562963, 0.564062)
+texture = ExtResource("2_8270q")
+
+[node name="SpriteWrapEndless" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.913725, 0.952941, 1, 1)
+position = Vector2(-16, 2223)
+scale = Vector2(0.561111, 0.712388)
+texture = ExtResource("3_757ay")
+
+[node name="SpriteWrapEndless2" type="Sprite2D" parent="BubbleManager/Center"]
+self_modulate = Color(0.913725, 0.952941, 1, 1)
+position = Vector2(-19, 4839)
+scale = Vector2(0.561111, 0.712388)
+texture = ExtResource("3_757ay")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = 288.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+mouse_filter = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tpgdy")
+volume_db = -30.0
+autoplay = true
+
+[node name="HandV2" parent="." instance=ExtResource("5_m78cc")]
+position = Vector2(200, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 480.275)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_sp87f")
