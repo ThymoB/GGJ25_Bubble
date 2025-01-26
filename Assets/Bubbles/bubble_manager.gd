@@ -25,6 +25,7 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 @export var max_speed := 40
 
 @onready var bubble_root: Node2D = $Center
+@onready var background: Sprite2D = $Background
 
 var bubbles:Array[Bubble]
 var bubbles_popped:=0
@@ -73,6 +74,9 @@ func _ready() -> void:
 	instance = self
 	#bubble_root the bubble_root in the middle of the screen
 	bubble_root.position.x = get_viewport().size.x*0.5
+
+	# hack for web build
+	background.position.x = get_viewport().size.x*0.5
 	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
