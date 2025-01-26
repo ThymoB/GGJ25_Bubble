@@ -13,7 +13,10 @@ const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0,"act":3},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0,"act":2},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.tscn"), "chance": 8.0,"act":1},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 5.0,"act":2}]
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Cat/cat_bubble.tscn"), "chance": 5.0,"act":2},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Corn/popcorn_bubble.tscn"), "chance": 5.0,"act":1},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Disco/disco_bubble.tscn"), "chance": 5.0,"act":3},
+	]
 	
 @export var bubble_spacing:=75
 @export var row_size:=6
