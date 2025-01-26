@@ -2,6 +2,8 @@ extends Node
 
 class_name BubbleManager
 
+signal bubble_popped_signal(bubble:Bubble)
+
 const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @export var bubbles_to_spawn:=100
@@ -24,7 +26,10 @@ const HEAT_DECAY_PER_SEC := 0.1
 
 var seconds_since_pop = 0.0
 
+static var instance:BubbleManager
+
 func _ready() -> void:
+	instance = self
 	spawn_bubbles()
 	
 func _process(delta: float) -> void:
