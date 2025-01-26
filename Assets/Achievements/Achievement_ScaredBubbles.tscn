@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvwlg4uj07d00"]
+
+[ext_resource type="Script" path="res://Assets/Achievements/achievement_scared_bubbles.gd" id="1_vaptt"]
+
+[node name="AchievementScaredBubbles" type="Node"]
+script = ExtResource("1_vaptt")
+title = "Scared Bubbles"
+earned_description = "Popped 5 Scared Bubbles in a row"
