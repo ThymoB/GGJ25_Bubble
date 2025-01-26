@@ -3,9 +3,6 @@ extends Node2D
 
 @export var hand_speed = 350.0
 
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -27,7 +24,7 @@ func _process(delta: float) -> void:
 	lerped_hand_speed = lerp((hand_speed*0.1), hand_speed,weight)
 	global_position = global_position + target_delta.normalized() * lerped_hand_speed * delta
 	
-func _physics_process(delta: float) -> void:	
+func _physics_process(_delta: float) -> void:	
 	#press down
 	if Input.is_action_just_pressed("click"):
 		#reset anim if already playing
@@ -37,31 +34,8 @@ func _physics_process(delta: float) -> void:
 		#detect bubbles underneath finger and pop
 		var overlapping_areas = $HandCollision_Area2D.get_overlapping_areas()
 		for area in overlapping_areas:
-			#print("Overlapping with:", area.name)
 			var overlap_bubble = area.get_parent()
 			if overlap_bubble as Bubble:
 				overlap_bubble.pop()
 			if overlap_bubble as SpeechBubble:
 				overlap_bubble.close_dialogue()
-		
-
-
-
-
-"""
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area:
-		if area.get_parent() as Bubble:
-			print("i entered bubble")
-"""
-
-"""
-func detect_collision_at_point(position: Vector2):
-	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(position, position)
-	var result = space_state.intersect_point(query)
-	
-	for item in result:
-		if not item.collider.is_null():
-			print("Collision detected with: ", item.collider.name)
-""" 

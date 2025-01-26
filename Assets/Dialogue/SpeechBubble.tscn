@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1unm70okpuk4"]
+[gd_scene load_steps=7 format=3 uid="uid://d1unm70okpuk4"]
 
 [ext_resource type="Script" path="res://Assets/Dialogue/speech_bubble.gd" id="1_p4ei3"]
 [ext_resource type="Texture2D" uid="uid://c4gdf5suchptn" path="res://Assets/Dialogue/beautiful_bubble.png" id="2_ru507"]
 [ext_resource type="FontFile" uid="uid://c4phojbf4gxvj" path="res://Assets/Fonts/Gaegu-Light.ttf" id="3_1p18r"]
 [ext_resource type="FontFile" uid="uid://cnhxbqekfv5kv" path="res://Assets/Fonts/Gaegu-Bold.ttf" id="4_fw2tp"]
+[ext_resource type="Texture2D" uid="uid://wgmc4e0tw6fd" path="res://Assets/Bubbler/bubbler_angry.png" id="5_4qjmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kovq"]
 size = Vector2(271.5, 127.5)
@@ -17,9 +18,9 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_ru507")
 
 [node name="Title" type="RichTextLabel" parent="."]
-offset_left = -123.0
+offset_left = -104.0
 offset_top = -83.0
-offset_right = 161.0
+offset_right = 180.0
 offset_bottom = -30.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_fw2tp")
@@ -47,5 +48,10 @@ shape = SubResource("RectangleShape2D_0kovq")
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(-131, -84)
+scale = Vector2(0.138, 0.134)
+texture = ExtResource("5_4qjmy")
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

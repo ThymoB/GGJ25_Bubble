@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("unused_signal")
 signal on_bubble_manager_created(bubble_manager:BubbleManager)
 
 # After this amount, go to the next Act
