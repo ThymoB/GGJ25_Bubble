@@ -5,17 +5,19 @@ const SPEECH_BUBBLE = preload("res://Assets/Dialogue/SpeechBubble.tscn")
 @export var BUBBLE_OFFSET:=Vector2(350,150)
 @export var random_pos:=50.0
 @export_category("Blurbs")
-@export var blurb_chance:=0.25
-
-@export var blurb_cooldown:= 5.0
-
-# Blurbs are loaded from path to save headache
 @export var blurbs_path = "res://dialogue/blurbs/"
+@export var blurb_chance:=0.25
+@export var blurb_cooldown:= 5.0
+@export_category("Idle")
+@export var idle_lines_path = "res://dialogue/idle/"
+@export var idle_time:=15.0 # Timeout when it should start playing idle lines
 
 var blurbs:Array[Dialogue]
+var idle_lines:Array[Dialogue]
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var blurb_timer: Timer = $BlurbTimer
+@onready var idle_timer: Timer = $IdleTimer
 
 var playing_dialogue:Dialogue
 var current_bubble:SpeechBubble
@@ -42,6 +44,8 @@ func get_resources_from_path(path: String) -> Array:
 
 func _ready():
 	get_blurbs()
+	get_idle_lines()
+	GameManager.on_bubble_manager_created.connect(on_bubble_manager_created)
 
 func get_blurbs():
 	blurbs.clear()
@@ -53,6 +57,23 @@ func get_blurbs():
 				banned_blurbs.append(resource.follow_up)
 	for banned_blurb in banned_blurbs:
 		blurbs.erase(banned_blurb)
+
+func get_idle_lines():
+	idle_lines.clear()
+	for resource in get_resources_from_path(idle_lines_path):
+		if resource is Dialogue:
+			idle_lines.append(resource)
+
+func on_bubble_manager_created(bubble_manager:BubbleManager):
+	start_idle_line_timer(null)
+	bubble_manager.bubble_popped_signal.connect(start_idle_line_timer)
+
+func start_idle_line_timer(_bubble):
+	# Stop Idle dialogue if bubble clicked when idle dialogue is showing
+	if current_bubble and idle_lines.has(current_bubble.dialogue):
+		stop_current_dialogue()
+	idle_timer.stop()
+	idle_timer.start(idle_time)
 
 func play_dialogue(dialogue:Dialogue):
 	stop_current_dialogue()
@@ -87,3 +108,6 @@ func play_blurb():
 	var random_blurb = eligible_blurbs.pick_random()
 	play_dialogue(random_blurb)
 	blurbs.erase(random_blurb)
+
+func _on_idle_timer_timeout() -> void:
+	play_dialogue(idle_lines.pick_random())

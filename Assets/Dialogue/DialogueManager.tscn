@@ -12,4 +12,8 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 15.0
+
 [connection signal="timeout" from="BlurbTimer" to="." method="_on_blurb_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

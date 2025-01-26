@@ -9,6 +9,7 @@
 size = Vector2(271.5, 127.5)
 
 [node name="SpeechBubble" type="Node2D"]
+z_index = 10
 script = ExtResource("1_p4ei3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -56,6 +56,7 @@ func pick_random_bubble() -> PackedScene:
 
 func _ready() -> void:
 	instance = self
+	GameManager.on_bubble_manager_created.emit(self)
 	spawn_bubbles()
 	
 func _process(delta: float) -> void:
@@ -82,6 +83,7 @@ func spawn_bubbles():
 # Do cool stuff here
 # You can check bubbles_popped to see how many bubbles have been popped
 func on_bubble_popped(bubble:Bubble):
+	bubble_popped_signal.emit(bubble)
 	add_heat()
 	seconds_since_pop = 0.0 
 	try_trigger_dialogue()
