@@ -16,7 +16,6 @@ viewport_path = NodePath("CountParticle/SubViewport")
 
 [node name="Bubble" instance=ExtResource("1_ybkvx")]
 pop_sounds = Array[AudioStream]([ExtResource("2_53cf8")])
-appears_in_act = 3
 
 [node name="EffectParticle" parent="." index="0"]
 material = SubResource("CanvasItemMaterial_btxf4")

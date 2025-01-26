@@ -7,11 +7,13 @@ signal bubble_popped_signal(bubble:Bubble)
 const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @export var bubble_types: Array = [
-	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 75.0},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Flower/flower_bubble.tscn"), "chance": 10.0},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.tscn"), "chance": 5.0},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0},
-	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0}]
+	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 75.0,"act":0},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Flower/flower_bubble.tscn"), "chance": 10.0,"act":1},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.tscn"), "chance": 5.0,"act":3},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0,"act":3},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0,"act":2},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Leaf/leaf_bubble.tscn"), "chance": 8.0,"act":1},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 5.0,"act":2}]
 	
 @export var bubbles_to_spawn:=100
 @export var bubble_spacing:=75
@@ -40,17 +42,19 @@ func pick_random_bubble() -> PackedScene:
 	
 	# Calculate the total weight
 	for item in bubble_types:
-		total_weight += item["chance"]
-	
+		if item["act"] == GameManager.get_current_act() or item["act"]==0:
+			total_weight += item["chance"]
+
 	# Generate a random number within the total weight range
 	var random_value = randf() * total_weight
 	var cumulative_weight = 0
 	
 	# Iterate over the scenes and select one based on the random value
 	for item in bubble_types:
-		cumulative_weight += item["chance"]
-		if random_value < cumulative_weight:
-			return item["scene"]
+		if item["act"] == GameManager.get_current_act() or item["act"]==0:
+			cumulative_weight += item["chance"]
+			if random_value < cumulative_weight:
+				return item["scene"]
 	
 	# Fallback (should never hit this if data is correctly configured)
 	return bubble_types[0]["scene"]

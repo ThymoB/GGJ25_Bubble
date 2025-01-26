@@ -22,7 +22,6 @@ viewport_path = NodePath("CountParticle/SubViewport")
 
 [node name="Bubble" instance=ExtResource("1_rodok")]
 pop_sounds = Array[AudioStream]([ExtResource("3_o5v7k")])
-appears_in_act = 3
 
 [node name="EffectParticle" parent="." index="0"]
 material = SubResource("CanvasItemMaterial_pyjql")
