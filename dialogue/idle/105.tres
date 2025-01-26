@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b8nifrmmxirk3"]
+
+[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_vud68"]
+
+[resource]
+script = ExtResource("2_vud68")
+unique_to_act = false
+act = 0
+character = "Bubbler"
+line = "Pop the bubble!"

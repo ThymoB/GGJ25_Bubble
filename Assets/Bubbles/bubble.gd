@@ -19,13 +19,16 @@ var bubble_manager:BubbleManager
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sprite: Sprite2D = $Sprite
 
+var popped = false
+
 func _ready() -> void:
 	rotate(randf_range(0,360))
 
 func is_popped()->bool:
-	return sprite.texture != UNPOPPED_IMG
+	return popped
 
 func pop():
+	popped = true
 	bubble_manager.bubbles_popped += 1
 	sprite.texture = POPPED_IMG
 	audio_stream_player.pitch_scale = randf_range(0.75,1.25)

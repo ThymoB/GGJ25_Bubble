@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bkfnjcq1lxvkv"]
-
-[ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_3l87u"]
-
-[resource]
-script = ExtResource("1_3l87u")
-act = 1
-character = "Bubbles"
-line = "Oh yes, I don’t think I’ve ever seen someone pop like that."

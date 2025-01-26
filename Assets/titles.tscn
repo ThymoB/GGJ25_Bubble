@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp4vvfx3vaqkd"]
+[gd_scene load_steps=9 format=3 uid="uid://cwb5wfdxjvnvv"]
 
 [ext_resource type="Script" path="res://Assets/start_button.gd" id="1_4gq0s"]
 [ext_resource type="FontFile" uid="uid://6tligljd6e32" path="res://Assets/Fonts/Gaegu-Regular.ttf" id="1_fx00r"]
