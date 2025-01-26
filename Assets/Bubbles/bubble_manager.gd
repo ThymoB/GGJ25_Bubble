@@ -7,9 +7,10 @@ signal bubble_popped_signal(bubble:Bubble)
 const BUBBLE_SCENE = preload("res://Assets/Bubbles/Bubble.tscn")
 
 @export var bubble_types: Array = [
-	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 80.0},
+	{"scene": preload("res://Assets/Bubbles/Bubble.tscn"), "chance": 75.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.tscn"), "chance": 10.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Duck/duck_bubble.tscn"), "chance": 5.0},
+	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Scared/scared_bubble.tscn"), "chance": 5.0},
 	{"scene": preload("res://Assets/Bubbles/BubbleVariations/Pirate/pirate_bubble.tscn"), "chance": 5.0}]
 	
 @export var bubbles_to_spawn:=100

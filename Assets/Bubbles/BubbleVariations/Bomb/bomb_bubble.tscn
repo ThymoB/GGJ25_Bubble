@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://gprije73fbdf"]
+[gd_scene load_steps=7 format=3 uid="uid://gprije73fbdf"]
 
 [ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_aeltp"]
 [ext_resource type="Texture2D" uid="uid://dfqvctrerrnxh" path="res://Assets/Bubbles/BubbleVariations/Bomb/bomb_bubble.png" id="2_64oec"]
@@ -10,6 +10,9 @@ particles_animation = true
 particles_anim_h_frames = 8
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y5ab4"]
+viewport_path = NodePath("CountParticle/SubViewport")
 
 [node name="Bubble" instance=ExtResource("1_aeltp")]
 pop_sounds = Array[AudioStream]([ExtResource("2_x7x2o")])
@@ -28,5 +31,8 @@ hue_variation_max = 0.44
 anim_speed_min = 2.0
 anim_speed_max = 5.0
 
-[node name="Sprite" parent="." index="1"]
+[node name="CountParticle" parent="." index="1"]
+texture = SubResource("ViewportTexture_y5ab4")
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_64oec")
