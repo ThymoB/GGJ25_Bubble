@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0ki61308dpu"]
+[gd_scene load_steps=14 format=3 uid="uid://c0ki61308dpu"]
 
 [ext_resource type="PackedScene" uid="uid://bbgff0jwnlu8k" path="res://Assets/Bubbles/Bubble.tscn" id="1_jwrkb"]
 [ext_resource type="Texture2D" uid="uid://ds4onsx2f8do7" path="res://Assets/Bubbles/BubbleVariations/Disco/discoball.png" id="2_5dnqf"]
 [ext_resource type="Script" path="res://Assets/Bubbles/BubbleVariations/Disco/disco_bubble.gd" id="2_qfhvg"]
+[ext_resource type="AudioStream" uid="uid://bg8ohh2bhva2i" path="res://Assets/Audio/papi pop me.mp3" id="3_2xpxs"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_45nno"]
 viewport_path = NodePath("CountParticle/SubViewport")
@@ -43,6 +44,21 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_exacd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_agjfw"]
 resource_name = "sprite_animation"
 length = 0.3
@@ -60,21 +76,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_exacd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o3byv"]
 _data = {
 "RESET": SubResource("Animation_exacd"),
@@ -83,6 +84,7 @@ _data = {
 
 [node name="Bubble" instance=ExtResource("1_jwrkb")]
 script = ExtResource("2_qfhvg")
+pop_sounds = Array[AudioStream]([ExtResource("3_2xpxs")])
 
 [node name="CountParticle" parent="." index="1"]
 texture = SubResource("ViewportTexture_45nno")
