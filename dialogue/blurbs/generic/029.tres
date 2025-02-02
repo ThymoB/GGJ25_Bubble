@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dr5yke1dcuyxr"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dr5yke1dcuyxr"]
 
+[ext_resource type="AudioStream" uid="uid://cpqjivmrkdqup" path="res://Assets/Audio/vo/29.wav" id="1_lwjjt"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_n5kqb"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 1
 character = "Bubbler"
 line = "You could be here forever. Think about the possibilities."
+audio_clip = ExtResource("1_lwjjt")

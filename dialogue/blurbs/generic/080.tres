@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b0d36yb8oq2bh"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://b0d36yb8oq2bh"]
 
+[ext_resource type="AudioStream" uid="uid://3hdkiy32e30h" path="res://Assets/Audio/vo/80.wav" id="1_x3mg7"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_banpj"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Oh, that’s heinous"
+audio_clip = ExtResource("1_x3mg7")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dfeilf63e4j1e"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dfeilf63e4j1e"]
 
+[ext_resource type="AudioStream" uid="uid://dorvmsq4i4wmt" path="res://Assets/Audio/vo/75.wav" id="1_2lymv"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_yptrj"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "You don’t look like you’re doing too well…"
+audio_clip = ExtResource("1_2lymv")

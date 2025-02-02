@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dismu1lejfum0"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dismu1lejfum0"]
 
+[ext_resource type="AudioStream" uid="uid://xwmfxq53st20" path="res://Assets/Audio/vo/7.wav" id="1_psnor"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_emgbg"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 1
 character = "Bubbler"
 line = "You are popping off!"
+audio_clip = ExtResource("1_psnor")

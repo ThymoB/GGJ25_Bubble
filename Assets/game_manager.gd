@@ -22,5 +22,5 @@ func _process(delta: float):
 	if !BubbleManager || !BubbleManager.instance:
 		return
 
-	if get_current_act() >= 4:
+	if get_current_act() >= 5:
 		get_tree().change_scene_to_file("res://Assets/Levels/BossTransition.tscn")

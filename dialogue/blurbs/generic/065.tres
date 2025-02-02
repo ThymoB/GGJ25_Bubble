@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dths5nkfqi1th"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dths5nkfqi1th"]
 
+[ext_resource type="AudioStream" uid="uid://bmowniljbm3t5" path="res://Assets/Audio/vo/65.wav" id="1_m8jfv"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_n1o1w"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Don’t tell me you do this every day…"
+audio_clip = ExtResource("1_m8jfv")

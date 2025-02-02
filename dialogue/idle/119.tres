@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bc20h7i8iebgy"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bc20h7i8iebgy"]
 
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_b5760"]
+[ext_resource type="AudioStream" uid="uid://quitm1ufxep0" path="res://Assets/Audio/vo/119.wav" id="1_vlo23"]
 
 [resource]
 script = ExtResource("1_b5760")
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Don’t you want to do it?"
+audio_clip = ExtResource("1_vlo23")

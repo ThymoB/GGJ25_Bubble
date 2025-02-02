@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bsnbfxh0xrssv"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bsnbfxh0xrssv"]
 
+[ext_resource type="AudioStream" uid="uid://cgfn7mqh637ug" path="res://Assets/Audio/vo/116.wav" id="1_5cii1"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_t4rxa"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "…you’re still not doing it."
+audio_clip = ExtResource("1_5cii1")

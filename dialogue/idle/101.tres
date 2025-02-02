@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dbim0jo2oby61"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dbim0jo2oby61"]
 
+[ext_resource type="AudioStream" uid="uid://c38rlnqkfrjmg" path="res://Assets/Audio/vo/101.wav" id="1_dqqfi"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_epyxw"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Anyday now…"
+audio_clip = ExtResource("1_dqqfi")

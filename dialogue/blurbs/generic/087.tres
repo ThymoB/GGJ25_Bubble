@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bdcxb6sa1q1yx"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bdcxb6sa1q1yx"]
 
+[ext_resource type="AudioStream" uid="uid://dbkdnh70wpbu0" path="res://Assets/Audio/vo/87.wav" id="1_w1a1l"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_k0a3p"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 1
 character = "Bubbler"
 line = "You’re doing splendidly!"
+audio_clip = ExtResource("1_w1a1l")

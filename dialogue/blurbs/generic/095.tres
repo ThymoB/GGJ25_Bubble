@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://d1aj8r2sxmkih"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://d1aj8r2sxmkih"]
 
+[ext_resource type="AudioStream" uid="uid://c71rqhq4wsr6b" path="res://Assets/Audio/vo/95.wav" id="1_x7w1j"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_pgw43"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 3
 character = "Bubbler"
 line = "I’m sorry for all of this."
+audio_clip = ExtResource("1_x7w1j")

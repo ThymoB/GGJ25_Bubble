@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://btm4hl2pt2skj"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://btm4hl2pt2skj"]
 
+[ext_resource type="AudioStream" uid="uid://xp3yy84j3vj4" path="res://Assets/Audio/vo/120.wav" id="1_j27ms"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_ry4kp"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "I thought I could trust you…"
+audio_clip = ExtResource("1_j27ms")

@@ -18,7 +18,7 @@ func _ready() -> void:
 	current_health = max_health
 	$ProgressBar.value = current_health
 	reset_wings()
-	pass # Replace with function body.
+	DialogueManager.idle_timer.stop()
 
 func hide_wings():
 	left_wing.process_mode = Node.PROCESS_MODE_DISABLED

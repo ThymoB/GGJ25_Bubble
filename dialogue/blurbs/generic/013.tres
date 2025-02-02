@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://ci5kry5vqqyeq"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://ci5kry5vqqyeq"]
 
+[ext_resource type="AudioStream" uid="uid://dp3mm1b0arhd4" path="res://Assets/Audio/vo/13.wav" id="1_jhtcg"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_o5q0c"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "My aunt can pop more bubbles than you."
+audio_clip = ExtResource("1_jhtcg")

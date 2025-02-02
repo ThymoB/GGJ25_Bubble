@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bhdpqis5ewxwj"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bhdpqis5ewxwj"]
 
+[ext_resource type="AudioStream" uid="uid://b2jwhrya7mrsk" path="res://Assets/Audio/vo/8.wav" id="1_b3nru"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_m0l4n"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbles"
 line = "Why are you still here?"
+audio_clip = ExtResource("1_b3nru")

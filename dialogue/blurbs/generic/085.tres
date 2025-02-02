@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://d140inlx8vtcx"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://d140inlx8vtcx"]
 
+[ext_resource type="AudioStream" uid="uid://co5ycahq7uitf" path="res://Assets/Audio/vo/85.wav" id="1_6cb7r"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_7yly1"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 2
 character = "Bubbler"
 line = "I might have made a grave mistake…"
+audio_clip = ExtResource("1_6cb7r")

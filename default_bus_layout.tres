@@ -1,9 +1,40 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://bltwwgjlnin0a"]
+[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://bltwwgjlnin0a"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_drjo2"]
 resource_name = "Reverb"
 hipass = 0.5
 wet = 0.05
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_1rymw"]
+resource_name = "Compressor"
+threshold = -18.0
+sidechain = &"VO"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_ce1tu"]
+resource_name = "Compressor"
+threshold = -10.0
+gain = 3.0
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_bblik"]
+resource_name = "Limiter"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_lcph6"]
+resource_name = "Reverb"
+hipass = 0.45
+wet = 0.05
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_v5ckk"]
+resource_name = "Delay"
+tap1_level_db = -18.0
+tap2_level_db = -24.0
+feedback_active = true
+feedback_level_db = -24.0
+feedback_lowpass = 8000.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_npa0r"]
+resource_name = "Compressor"
+threshold = -18.0
+sidechain = &"VO"
 
 [resource]
 bus/1/name = &"SFX"
@@ -14,3 +45,27 @@ bus/1/volume_db = 0.0
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectReverb_drjo2")
 bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectCompressor_1rymw")
+bus/1/effect/1/enabled = true
+bus/2/name = &"VO"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -2.05253
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_ce1tu")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectLimiter_bblik")
+bus/2/effect/1/enabled = true
+bus/2/effect/2/effect = SubResource("AudioEffectReverb_lcph6")
+bus/2/effect/2/enabled = true
+bus/2/effect/3/effect = SubResource("AudioEffectDelay_v5ckk")
+bus/2/effect/3/enabled = true
+bus/3/name = &"MUS"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectCompressor_npa0r")
+bus/3/effect/0/enabled = true

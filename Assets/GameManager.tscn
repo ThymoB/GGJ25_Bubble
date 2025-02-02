@@ -4,3 +4,4 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_mei5u")
+act_pop_thresholds = [30, 60, 80, 150, 200]

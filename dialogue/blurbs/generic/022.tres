@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cheegiw0nr8nu"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cheegiw0nr8nu"]
 
+[ext_resource type="AudioStream" uid="uid://cp5ohis0ugcq7" path="res://Assets/Audio/vo/22.wav" id="1_5cbfx"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_k2hhh"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "I’d say we’re really starting to know each other."
+audio_clip = ExtResource("1_5cbfx")

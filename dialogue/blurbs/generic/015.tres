@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b3fm848cjh4or"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://b3fm848cjh4or"]
 
+[ext_resource type="AudioStream" uid="uid://s7gkvllh04w1" path="res://Assets/Audio/vo/15.wav" id="1_vxxex"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_r10ui"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "You really have that bubble pop technique under control."
+audio_clip = ExtResource("1_vxxex")

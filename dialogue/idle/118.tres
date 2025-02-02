@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dap6vjhm2l3db"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dap6vjhm2l3db"]
 
+[ext_resource type="AudioStream" uid="uid://dvell12s627u" path="res://Assets/Audio/vo/118.wav" id="1_6icdp"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_r6b8s"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "What’s wrong with you?"
+audio_clip = ExtResource("1_6icdp")

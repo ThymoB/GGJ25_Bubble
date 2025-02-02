@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c36qgrhww3h50"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://c36qgrhww3h50"]
 
+[ext_resource type="AudioStream" uid="uid://b2fjwp0v26t23" path="res://Assets/Audio/vo/84.wav" id="1_fqkry"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_uwbwt"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 1
 character = "Bubbler"
 line = "I knew you were the right one. I knew you could do it."
+audio_clip = ExtResource("1_fqkry")

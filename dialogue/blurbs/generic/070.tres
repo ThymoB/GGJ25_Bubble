@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bdjp2c0uj5q67"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bdjp2c0uj5q67"]
 
+[ext_resource type="AudioStream" uid="uid://dst21e45ulmih" path="res://Assets/Audio/vo/70.wav" id="1_xvm55"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_0qjyo"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "*coughing* I choked…on my spit, sorry."
+audio_clip = ExtResource("1_xvm55")

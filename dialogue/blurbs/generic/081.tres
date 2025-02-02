@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://o7i22yx8xjey"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://o7i22yx8xjey"]
 
+[ext_resource type="AudioStream" uid="uid://cwafnmv4hniul" path="res://Assets/Audio/vo/81.wav" id="1_qncdc"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_5871n"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "All of this is nonsense, are you f*cking insane?"
+audio_clip = ExtResource("1_qncdc")

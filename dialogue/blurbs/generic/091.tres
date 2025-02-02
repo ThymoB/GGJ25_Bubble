@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cbulho6xd6j7t"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cbulho6xd6j7t"]
 
+[ext_resource type="AudioStream" uid="uid://3bpyf6uyyc6e" path="res://Assets/Audio/vo/91.wav" id="1_tj8jf"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_wy0ii"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 3
 character = "Bubbler"
 line = "Stop! I command you! Stop!"
+audio_clip = ExtResource("1_tj8jf")

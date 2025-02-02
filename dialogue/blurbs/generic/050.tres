@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://c18ti5ke2gaip"]
 
+[ext_resource type="AudioStream" uid="uid://rd12ra6fykwj" path="res://Assets/Audio/vo/50.wav" id="1_ixooc"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_rd8el"]
-
-[sub_resource type="Resource" id="Resource_1q0x1"]
-metadata/__load_path__ = "res://dialogue/blurbs/generic/blurb_generic_01_b.tres"
 
 [resource]
 script = ExtResource("2_rd8el")
@@ -11,4 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "You know you can’t resist it…"
-follow_up = SubResource("Resource_1q0x1")
+audio_clip = ExtResource("1_ixooc")

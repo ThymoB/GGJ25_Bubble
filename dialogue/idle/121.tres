@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://clm7wwtpyyv3x"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://clm7wwtpyyv3x"]
 
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="1_74ue5"]
+[ext_resource type="AudioStream" uid="uid://0c0j5imf3fk8" path="res://Assets/Audio/vo/121.wav" id="1_nfkta"]
 
 [resource]
 script = ExtResource("1_74ue5")
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Nevermind."
+audio_clip = ExtResource("1_nfkta")

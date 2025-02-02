@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bnf0om7kyuetr"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bnf0om7kyuetr"]
 
+[ext_resource type="AudioStream" uid="uid://sajf5tjrsp0a" path="res://Assets/Audio/vo/43.wav" id="1_sd62j"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_0v0ck"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "If you keep going like that, you’ll have to start using both index fingers to keep up."
+audio_clip = ExtResource("1_sd62j")

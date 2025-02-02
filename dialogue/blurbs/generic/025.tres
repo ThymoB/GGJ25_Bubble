@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bwio3lxpj2cy4"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bwio3lxpj2cy4"]
 
+[ext_resource type="AudioStream" uid="uid://naqe4q7bfjp4" path="res://Assets/Audio/vo/25.wav" id="1_ltj51"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_26wwt"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "You don’t have to be gentle with the popping."
+audio_clip = ExtResource("1_ltj51")

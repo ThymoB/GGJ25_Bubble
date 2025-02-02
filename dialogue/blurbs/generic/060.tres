@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://sq4f0v1b4rbr"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://sq4f0v1b4rbr"]
 
+[ext_resource type="AudioStream" uid="uid://cly5t67h84kum" path="res://Assets/Audio/vo/60.wav" id="1_p1oul"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_cskxc"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Is this making you hungry?"
+audio_clip = ExtResource("1_p1oul")

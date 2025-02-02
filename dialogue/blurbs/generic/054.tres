@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://mfx7r0k4pby3"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://mfx7r0k4pby3"]
 
+[ext_resource type="AudioStream" uid="uid://duarbd0rqgxlr" path="res://Assets/Audio/vo/54.wav" id="1_orbyo"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_2ch3r"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 2
 character = "Bubbler"
 line = "...maybe you should stop."
+audio_clip = ExtResource("1_orbyo")

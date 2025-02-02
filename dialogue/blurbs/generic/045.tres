@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c5chmhfv2ahc"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://c5chmhfv2ahc"]
 
+[ext_resource type="AudioStream" uid="uid://dqkiwjns8xm0k" path="res://Assets/Audio/vo/45.wav" id="1_ayovi"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_7osjx"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "You damn tease…"
+audio_clip = ExtResource("1_ayovi")

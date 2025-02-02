@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bteoy2edmdggm"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bteoy2edmdggm"]
 
+[ext_resource type="AudioStream" uid="uid://bwk1gl1l87k4t" path="res://Assets/Audio/vo/71.wav" id="1_iqvu3"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_nghje"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Still here, aren’t we?"
+audio_clip = ExtResource("1_iqvu3")

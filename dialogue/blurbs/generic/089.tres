@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b5x5s8i0wiu2r"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://b5x5s8i0wiu2r"]
 
+[ext_resource type="AudioStream" uid="uid://d2tcd8vtsohsu" path="res://Assets/Audio/vo/89.wav" id="1_ea18f"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_5wu05"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 2
 character = "Bubbler"
 line = "Wait, stop! I knew that bubble well!"
+audio_clip = ExtResource("1_ea18f")

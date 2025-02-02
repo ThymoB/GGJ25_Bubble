@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bavrlkxu30tw"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bavrlkxu30tw"]
 
+[ext_resource type="AudioStream" uid="uid://05nvaj16d7vm" path="res://Assets/Audio/vo/93.wav" id="1_tdt4q"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_hfxqy"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 3
 character = "Bubbler"
 line = "You’re bound to regret this!"
+audio_clip = ExtResource("1_tdt4q")

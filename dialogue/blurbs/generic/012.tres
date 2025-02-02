@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cqu3wqagh1iph"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cqu3wqagh1iph"]
 
+[ext_resource type="AudioStream" uid="uid://uiqop04a45e3" path="res://Assets/Audio/vo/12.wav" id="1_tt7da"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_0ip1s"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 1
 character = "Bubbler"
 line = "If only life was this easy."
+audio_clip = ExtResource("1_tt7da")

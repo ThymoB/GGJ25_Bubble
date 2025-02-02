@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://7ci00cgwtwn8"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://7ci00cgwtwn8"]
 
+[ext_resource type="AudioStream" uid="uid://d4mlh3sys5elg" path="res://Assets/Audio/vo/33.wav" id="1_tc4ae"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_52vvl"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Are you tired?"
+audio_clip = ExtResource("1_tc4ae")

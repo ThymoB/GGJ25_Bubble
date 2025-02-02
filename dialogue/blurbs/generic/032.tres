@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dm7iogv7wkkny"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dm7iogv7wkkny"]
 
+[ext_resource type="AudioStream" uid="uid://dmnng5of1nd1c" path="res://Assets/Audio/vo/32.wav" id="1_4dwm4"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_kb62g"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Don’t let go, now!"
+audio_clip = ExtResource("1_4dwm4")

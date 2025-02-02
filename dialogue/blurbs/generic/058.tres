@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://lt3t35rg5ds4"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://lt3t35rg5ds4"]
 
+[ext_resource type="AudioStream" uid="uid://duvpln60uk6io" path="res://Assets/Audio/vo/58.wav" id="1_cmb8u"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_37hww"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Time is money, you know. And you’re wasting a whole lot of it on something utterly useless right now."
+audio_clip = ExtResource("1_cmb8u")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bvqy0xcb8bal0"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bvqy0xcb8bal0"]
 
+[ext_resource type="AudioStream" uid="uid://b7ewrjkh4yf27" path="res://Assets/Audio/vo/63.wav" id="1_i0tbu"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_83t87"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "A bubble afloat. The sun shines on the round orb. Pop pop pop pop pop"
+audio_clip = ExtResource("1_i0tbu")

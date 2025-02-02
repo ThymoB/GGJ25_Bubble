@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://ny1v2kag0kmb"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://ny1v2kag0kmb"]
 
+[ext_resource type="AudioStream" uid="uid://bimbpvhuxder4" path="res://Assets/Audio/vo/46.wav" id="1_kdu6g"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_tt8bl"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Oh, that was a good one…"
+audio_clip = ExtResource("1_kdu6g")

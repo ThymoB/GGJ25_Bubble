@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://b4fqkno45lkgx"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://b4fqkno45lkgx"]
 
+[ext_resource type="AudioStream" uid="uid://b3kg0rfbo3865" path="res://Assets/Audio/vo/20.wav" id="1_hu8lq"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_ckwyu"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "What if every pops kills a person? WHAT IF …"
+audio_clip = ExtResource("1_hu8lq")

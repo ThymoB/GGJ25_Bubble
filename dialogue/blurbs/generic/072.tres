@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cjypb1ae7o8ul"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cjypb1ae7o8ul"]
 
+[ext_resource type="AudioStream" uid="uid://bemjn70tk50v8" path="res://Assets/Audio/vo/72.wav" id="1_v0blo"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_5oy8c"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "After all this time…"
+audio_clip = ExtResource("1_v0blo")

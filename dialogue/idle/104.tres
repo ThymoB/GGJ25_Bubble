@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bdwg8yqrqa6m3"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://bdwg8yqrqa6m3"]
 
+[ext_resource type="AudioStream" uid="uid://c03ktpqswosx4" path="res://Assets/Audio/vo/104.wav" id="1_1c802"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_v0oep"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Hey! You’re here to do ONE THING."
+audio_clip = ExtResource("1_1c802")

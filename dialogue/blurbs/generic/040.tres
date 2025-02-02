@@ -1,9 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://dhdmlm3qtmch4"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dhdmlm3qtmch4"]
 
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_680ja"]
-
-[sub_resource type="Resource" id="Resource_swltp"]
-metadata/__load_path__ = "res://dialogue/blurbs/generic/blurb_generic_01_b.tres"
 
 [resource]
 script = ExtResource("2_680ja")
@@ -11,4 +8,3 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "*slightly sensual moan*"
-follow_up = SubResource("Resource_swltp")

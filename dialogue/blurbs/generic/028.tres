@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cccxwp2s7ogga"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cccxwp2s7ogga"]
 
+[ext_resource type="AudioStream" uid="uid://c4senh8xhsue2" path="res://Assets/Audio/vo/28.wav" id="1_5n8x1"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_uys05"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Empty your mind…focus on the bubbles…"
+audio_clip = ExtResource("1_5n8x1")

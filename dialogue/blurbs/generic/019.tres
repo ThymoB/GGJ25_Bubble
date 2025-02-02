@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://mj5j4o1givd7"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://mj5j4o1givd7"]
 
+[ext_resource type="AudioStream" uid="uid://djoh1s55cknu8" path="res://Assets/Audio/vo/19.wav" id="1_w3x07"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_wkr21"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Is there an order to things? Do some bubbles have more worth than others?"
+audio_clip = ExtResource("1_w3x07")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://coqwklefy35jl"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://coqwklefy35jl"]
 
+[ext_resource type="AudioStream" uid="uid://b8tlbd8mfukp4" path="res://Assets/Audio/vo/23.wav" id="1_fodwx"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_avb23"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = false
 act = 0
 character = "Bubbler"
 line = "Feels like you are dealing with some unresolved issues."
+audio_clip = ExtResource("1_fodwx")

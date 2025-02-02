@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c4e6ubyde86vl"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://c4e6ubyde86vl"]
 
+[ext_resource type="AudioStream" uid="uid://dvyqb8u8k6h8o" path="res://Assets/Audio/vo/92.wav" id="1_i8fil"]
 [ext_resource type="Script" path="res://Assets/Dialogue/dialogue.gd" id="2_famic"]
 
 [resource]
@@ -8,3 +9,4 @@ unique_to_act = true
 act = 3
 character = "Bubbler"
 line = "This is your last warning!"
+audio_clip = ExtResource("1_i8fil")
